@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BankNoti | Chính sách & Điều khoản</title>
+  <meta name="description" content="Chính sách quyền riêng tư và điều khoản sử dụng của BankNoti – ứng dụng thu thập và phân loại thông báo giao dịch ngân hàng để quản lý tài chính cá nhân.">
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --fg: #0f172a;
+      --muted: #5b6472;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --brand: #2563eb;
+      --brand-2: #0ea5e9;
+      --accent: #22c55e;
+      --link: #1d4ed8;
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+    }
+    .hero {
+      background: radial-gradient(circle at 20% 20%, rgba(37,99,235,0.15), transparent 40%), radial-gradient(circle at 80% 0%, rgba(14,165,233,0.18), transparent 38%), linear-gradient(135deg, rgba(37,99,235,0.15), rgba(14,165,233,0.05));
+      border-bottom: 1px solid rgba(37,99,235,0.12);
+      padding: 32px 0 18px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px 64px;
+    }
+    header { padding: 4px 0 12px; }
+    h1 { margin: 0; font-size: 30px; letter-spacing: -0.01em; }
+    .subtitle { margin: 10px 0 6px; color: var(--muted); }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.12);
+      color: #1d4ed8;
+      border: 1px solid rgba(37,99,235,0.18);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+    .meta { color: var(--muted); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: flex-start; }
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: 1fr 280px; }
+      .side { position: sticky; top: 18px; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 20px 18px;
+      box-shadow: 0 12px 50px rgba(15,23,42,0.06);
+    }
+    h2 { font-size: 21px; margin: 22px 0 10px; letter-spacing: -0.01em; }
+    h3 { font-size: 16px; margin: 16px 0 6px; }
+    p { margin: 8px 0 10px; }
+    ul { margin: 8px 0 12px; padding-left: 20px; }
+    li { margin: 6px 0; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .toc ul { list-style: none; padding: 0; margin: 10px 0 0; }
+    .toc li { margin: 8px 0; }
+    .toc a { color: var(--fg); display: inline-block; padding: 6px 8px; border-radius: 8px; }
+    .toc a:hover { background: rgba(37,99,235,0.08); }
+    .pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(34,197,94,0.12);
+      color: #15803d;
+      border: 1px solid rgba(34,197,94,0.3);
+      font-size: 12px;
+    }
+    .note {
+      background: rgba(37,99,235,0.06);
+      border: 1px solid rgba(37,99,235,0.18);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      color: #0f172a;
+    }
+    .warn {
+      background: rgba(244, 63, 94, 0.06);
+      border: 1px solid rgba(244, 63, 94, 0.18);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      color: #991b1b;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <header>
+        <div class="badge">BankNoti</div>
+        <h1>Chính sách quyền riêng tư & Điều khoản sử dụng</h1>
+        <p class="subtitle">BankNoti giúp bạn quản lý tài chính cá nhân dễ dàng hơn bằng cách tự động thu thập và phân loại thông báo giao dịch từ các ứng dụng ngân hàng trên điện thoại, để bạn theo dõi thu – chi và lịch sử chính xác ở một nơi.</p>
+        <p class="meta">Hiệu lực: 09/12/2025 · Phiên bản: 1.0</p>
+      </header>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+      <main>
+        <section class="card toc" aria-label="Mục lục">
+          <strong>Mục lục</strong>
+          <ul>
+            <li><a href="#tong-quan">1. Tổng quan & phạm vi</a></li>
+            <li><a href="#cach-hoat-dong">2. Ứng dụng hoạt động thế nào</a></li>
+            <li><a href="#du-lieu">3. Dữ liệu chúng tôi thu thập</a></li>
+            <li><a href="#muc-dich">4. Mục đích sử dụng dữ liệu</a></li>
+            <li><a href="#quyen-truy-cap">5. Quyền truy cập & cho phép</a></li>
+            <li><a href="#luu-tru">6. Lưu trữ & bảo mật</a></li>
+            <li><a href="#chia-se">7. Chia sẻ với bên thứ ba</a></li>
+            <li><a href="#quyen-cua-ban">8. Quyền của bạn</a></li>
+            <li><a href="#dieu-khoan">9. Điều khoản sử dụng</a></li>
+            <li><a href="#cap-nhat">10. Thay đổi & hiệu lực</a></li>
+            <li><a href="#lien-he">11. Liên hệ</a></li>
+          </ul>
+        </section>
+
+        <section id="tong-quan" class="card">
+          <h2>1. Tổng quan & phạm vi</h2>
+          <p>Tài liệu này áp dụng cho ứng dụng BankNoti (“Ứng dụng”, “chúng tôi”), mô tả cách chúng tôi thu thập, sử dụng, lưu trữ, bảo vệ và chia sẻ dữ liệu khi bạn dùng ứng dụng để gom và phân loại thông báo giao dịch ngân hàng trên thiết bị của bạn.</p>
+          <p><span class="pill">Cam kết</span> BankNoti không yêu cầu thông tin đăng nhập ngân hàng, không đọc OTP, không thực hiện giao dịch tài chính thay bạn.</p>
+        </section>
+
+        <section id="cach-hoat-dong" class="card">
+          <h2>2. Ứng dụng hoạt động thế nào</h2>
+          <ul>
+            <li>Ứng dụng cần quyền đọc thông báo (Notification Access) để nhận thông báo giao dịch từ các app ngân hàng có sẵn trên điện thoại.</li>
+            <li>Thông tin từ thông báo được trích xuất và phân loại <strong>trực tiếp trên thiết bị</strong>, sau đó hiển thị trong giao diện BankNoti.</li>
+            <li>Nếu bạn bật sao lưu/đồng bộ (nếu tính năng có sẵn), dữ liệu thu – chi sẽ được mã hóa khi truyền và lưu tại máy chủ để truy cập đa thiết bị.</li>
+          </ul>
+        </section>
+
+        <section id="du-lieu" class="card">
+          <h2>3. Dữ liệu chúng tôi thu thập</h2>
+          <h3>3.1. Thông báo giao dịch ngân hàng</h3>
+          <ul>
+            <li>Nội dung thông báo: số tiền, loại giao dịch (thu/chi/chuyển khoản), thời gian, đuôi tài khoản/thẻ, tên ngân hàng gửi.</li>
+            <li>Thẻ phân loại do bạn thiết lập (ví dụ: ăn uống, hóa đơn, tiết kiệm).</li>
+            <li><strong>Không</strong> thu thập mã OTP, thông tin đăng nhập, mật khẩu thẻ, hoặc nội dung không liên quan giao dịch.</li>
+          </ul>
+          <h3>3.2. Dữ liệu bạn cung cấp thêm</h3>
+          <ul>
+            <li>Ghi chú giao dịch, chỉnh sửa phân loại, thêm giao dịch thủ công.</li>
+            <li>Cài đặt cá nhân: ngôn ngữ, chủ đề, cấu hình sao lưu/đồng bộ.</li>
+          </ul>
+          <h3>3.3. Dữ liệu kỹ thuật</h3>
+          <ul>
+            <li>Phiên bản ứng dụng, hệ điều hành, thiết bị, ngôn ngữ, múi giờ.</li>
+            <li>Nhật ký lỗi/hiệu năng ẩn danh để khắc phục sự cố (nếu bạn bật gửi chẩn đoán).</li>
+          </ul>
+          <div class="warn"><strong>Chúng tôi không:</strong> thu danh bạ, ảnh, vị trí chính xác, micro/camera nếu bạn không cấp phép riêng; không bán dữ liệu cá nhân.</div>
+        </section>
+
+        <section id="muc-dich" class="card">
+          <h2>4. Mục đích sử dụng dữ liệu</h2>
+          <ul>
+            <li>Hiển thị, thống kê và tìm kiếm lịch sử thu – chi, số dư ước tính (nếu bạn nhập).</li>
+            <li>Tự động phân loại giao dịch và gợi ý nhãn để bạn quản lý tài chính rõ ràng hơn.</li>
+            <li>Đồng bộ đa thiết bị hoặc sao lưu (khi bạn bật), gửi thông báo nhắc nhở hoặc cảnh báo bất thường.</li>
+            <li>Cải thiện hiệu năng, sửa lỗi, đảm bảo an toàn và tuân thủ pháp luật.</li>
+          </ul>
+        </section>
+
+        <section id="quyen-truy-cap" class="card">
+          <h2>5. Quyền truy cập & cho phép</h2>
+          <ul>
+            <li><strong>Quyền đọc thông báo:</strong> bắt buộc để nhận và xử lý thông báo giao dịch. Bạn có thể tắt bất cứ lúc nào trong cài đặt hệ thống; khi tắt, ứng dụng không thể ghi nhận giao dịch mới.</li>
+            <li>Quyền bộ nhớ/đồng bộ (nếu có): chỉ dùng để sao lưu dữ liệu bạn lựa chọn.</li>
+          </ul>
+          <div class="note">Bạn có thể rút lại quyền bất cứ lúc nào trong cài đặt thiết bị; một số tính năng có thể bị giới hạn.</div>
+        </section>
+
+        <section id="luu-tru" class="card">
+          <h2>6. Lưu trữ & bảo mật</h2>
+          <ul>
+            <li><strong>Trên thiết bị:</strong> giao dịch và phân loại được lưu cục bộ; không rời khỏi thiết bị nếu bạn không bật đồng bộ.</li>
+            <li><strong>Khi đồng bộ:</strong> dữ liệu được mã hóa khi truyền (HTTPS) và lưu trữ trên máy chủ với kiểm soát truy cập hợp lý.</li>
+            <li><strong>Thời gian lưu:</strong> giữ trong thời gian cần thiết cho mục đích nêu trên hoặc cho đến khi bạn yêu cầu xóa.</li>
+          </ul>
+        </section>
+
+        <section id="chia-se" class="card">
+          <h2>7. Chia sẻ với bên thứ ba</h2>
+          <p>Chúng tôi <strong>không bán</strong> dữ liệu cá nhân. Việc chia sẻ (nếu có) chỉ gồm:</p>
+          <ul>
+            <li>Nhà cung cấp hạ tầng/đồng bộ, phân tích hiệu năng, gửi thông báo – theo hợp đồng bảo mật.</li>
+            <li>Cơ quan chức năng khi có yêu cầu hợp lệ theo pháp luật.</li>
+          </ul>
+        </section>
+
+        <section id="quyen-cua-ban" class="card">
+          <h2>8. Quyền của bạn</h2>
+          <ul>
+            <li>Xem, chỉnh sửa, xóa giao dịch và nhãn trong ứng dụng.</li>
+            <li>Rút lại quyền đọc thông báo hoặc tắt đồng bộ bất kỳ lúc nào.</li>
+            <li>Yêu cầu xóa dữ liệu lưu trên máy chủ (nếu có đồng bộ) qua kênh liên hệ.</li>
+            <li>Nhận thông tin về thay đổi chính sách và cập nhật quan trọng.</li>
+          </ul>
+        </section>
+
+        <section id="dieu-khoan" class="card">
+          <h2>9. Điều khoản sử dụng</h2>
+          <h3>9.1. Sử dụng hợp lệ</h3>
+          <ul>
+            <li>Chỉ dùng ứng dụng cho mục đích quản lý tài chính cá nhân, tuân thủ pháp luật.</li>
+            <li>Không can thiệp, đảo ngược, khai thác lỗ hổng hoặc sử dụng dữ liệu người khác trái phép.</li>
+          </ul>
+          <h3>9.2. Quyền sở hữu</h3>
+          <p>BankNoti và các thành phần liên quan (thương hiệu, giao diện, mã nguồn) thuộc quyền sở hữu hoặc được cấp phép hợp pháp; bạn không được sao chép, phân phối khi chưa có phép.</p>
+          <h3>9.3. Giới hạn trách nhiệm</h3>
+          <p>Chúng tôi nỗ lực duy trì độ chính xác thống kê, nhưng kết quả chỉ mang tính hỗ trợ. Trong phạm vi pháp luật cho phép, chúng tôi không chịu trách nhiệm đối với thiệt hại gián tiếp/hệ quả phát sinh từ việc sử dụng ứng dụng.</p>
+          <h3>9.4. Thay đổi dịch vụ</h3>
+          <p>Chúng tôi có thể cập nhật, tạm ngừng hoặc chấm dứt một tính năng để cải thiện trải nghiệm; sẽ thông báo hợp lý nếu thay đổi đáng kể.</p>
+        </section>
+
+        <section id="cap-nhat" class="card">
+          <h2>10. Thay đổi & hiệu lực</h2>
+          <p>Chúng tôi có thể cập nhật tài liệu này để phản ánh thay đổi tính năng hoặc yêu cầu pháp lý. Phiên bản mới sẽ nêu rõ ngày hiệu lực; tiếp tục sử dụng sau ngày hiệu lực nghĩa là bạn chấp nhận điều khoản mới.</p>
+        </section>
+
+        <section id="lien-he" class="card">
+          <h2>11. Liên hệ</h2>
+          <p>Nếu có câu hỏi, yêu cầu về dữ liệu hoặc điều khoản, vui lòng liên hệ:</p>
+          <ul>
+            <li>Email: <a href="mailto:phongdevinfo@gmail.com">phongdevinfo@gmail.com</a></li>
+            <li>Tiêu đề gợi ý: <code>[BankNoti] Yêu cầu dữ liệu/Thắc mắc điều khoản</code></li>
+          </ul>
+        </section>
+      </main>
+
+      <aside class="side">
+        <div class="card">
+          <h3>Tóm tắt nhanh</h3>
+          <ul>
+            <li>Tự động đọc & phân loại thông báo giao dịch.</li>
+            <li>Xử lý trên thiết bị; đồng bộ chỉ khi bạn bật.</li>
+            <li>Không thu thập OTP, mật khẩu, thông tin đăng nhập.</li>
+            <li>Có thể xóa/sửa dữ liệu khi bạn yêu cầu.</li>
+          </ul>
+          <p class="meta">Luôn kiểm tra quyền đọc thông báo và cập nhật ứng dụng để nhận các bản vá bảo mật mới nhất.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © 2025 BankNoti. Mọi quyền được bảo lưu.
+    </footer>
+  </div>
+</body>
+</html>
+
