@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ứng dụng Phong Thủy | Chính sách & Điều khoản</title>
+  <meta name="description" content="Chính sách quyền riêng tư và điều khoản sử dụng của Ứng dụng Phong Thủy – xem lịch, ngày tốt, tử vi, bát tự.">
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --fg: #1a1a1a;
+      --muted: #6b6b6b;
+      --card: #ffffff;
+      --border: #e8e6e1;
+      --brand: #8b4513;
+      --brand-2: #d4a574;
+      --accent: #c9a961;
+      --link: #8b4513;
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(139,69,19,0.08) 0%, rgba(212,165,116,0.05) 50%, rgba(201,169,97,0.08) 100%);
+      border-bottom: 1px solid rgba(139,69,19,0.12);
+      padding: 32px 0 18px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px 64px;
+    }
+    header { padding: 4px 0 12px; }
+    h1 { margin: 0; font-size: 30px; letter-spacing: -0.01em; color: var(--brand); }
+    .subtitle { margin: 10px 0 6px; color: var(--muted); }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(139,69,19,0.12);
+      color: #8b4513;
+      border: 1px solid rgba(139,69,19,0.18);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+    .meta { color: var(--muted); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: flex-start; }
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: 1fr 280px; }
+      .side { position: sticky; top: 18px; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 20px 18px;
+      box-shadow: 0 12px 50px rgba(15,23,42,0.06);
+    }
+    h2 { font-size: 21px; margin: 22px 0 10px; letter-spacing: -0.01em; color: var(--brand); }
+    h3 { font-size: 16px; margin: 16px 0 6px; }
+    p { margin: 8px 0 10px; }
+    ul { margin: 8px 0 12px; padding-left: 20px; }
+    li { margin: 6px 0; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .toc ul { list-style: none; padding: 0; margin: 10px 0 0; }
+    .toc li { margin: 8px 0; }
+    .toc a { color: var(--fg); display: inline-block; padding: 6px 8px; border-radius: 8px; }
+    .toc a:hover { background: rgba(139,69,19,0.08); }
+    .pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(201,169,97,0.15);
+      color: #8b6f3d;
+      border: 1px solid rgba(201,169,97,0.3);
+      font-size: 12px;
+    }
+    .note {
+      background: rgba(139,69,19,0.06);
+      border: 1px solid rgba(139,69,19,0.18);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      color: #1a1a1a;
+    }
+    .warn {
+      background: rgba(244, 63, 94, 0.06);
+      border: 1px solid rgba(244, 63, 94, 0.18);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      color: #991b1b;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <header>
+        <div class="badge">Ứng dụng Phong Thủy</div>
+        <h1>Chính sách quyền riêng tư & Điều khoản sử dụng</h1>
+        <p class="subtitle">Ứng dụng Phong Thủy cung cấp các công cụ tra cứu lịch âm dương, xem ngày tốt xấu, tử vi, bát tự và các thông tin phong thủy để hỗ trợ bạn trong cuộc sống hàng ngày.</p>
+      </header>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+      <main>
+        <section class="card toc" aria-label="Mục lục">
+          <strong>Mục lục</strong>
+          <ul>
+            <li><a href="#tong-quan">1. Tổng quan & phạm vi</a></li>
+            <li><a href="#tinh-nang">2. Tính năng ứng dụng</a></li>
+            <li><a href="#du-lieu">3. Dữ liệu chúng tôi thu thập</a></li>
+            <li><a href="#muc-dich">4. Mục đích sử dụng dữ liệu</a></li>
+            <li><a href="#luu-tru">5. Lưu trữ & bảo mật</a></li>
+            <li><a href="#chia-se">6. Chia sẻ với bên thứ ba</a></li>
+            <li><a href="#quyen-cua-ban">7. Quyền của bạn</a></li>
+            <li><a href="#tu-vi-bat-tu">8. Lưu ý về tử vi & bát tự</a></li>
+            <li><a href="#dieu-khoan">9. Điều khoản sử dụng</a></li>
+            <li><a href="#cap-nhat">10. Thay đổi & hiệu lực</a></li>
+            <li><a href="#lien-he">11. Liên hệ</a></li>
+          </ul>
+        </section>
+
+        <section id="tong-quan" class="card">
+          <h2>1. Tổng quan & phạm vi</h2>
+          <p>Tài liệu này áp dụng cho Ứng dụng Phong Thủy ("Ứng dụng", "chúng tôi"), mô tả cách chúng tôi thu thập, sử dụng, lưu trữ, bảo vệ và chia sẻ dữ liệu khi bạn sử dụng các tính năng xem lịch, tra cứu ngày tốt, tử vi, bát tự và các công cụ phong thủy khác.</p>
+          <p><span class="pill">Cam kết</span> Ứng dụng được phát triển với mục đích cung cấp thông tin tham khảo về phong thủy, lịch âm dương và các kiến thức truyền thống. Kết quả chỉ mang tính chất tham khảo, không thay thế cho tư vấn chuyên nghiệp.</p>
+        </section>
+
+        <section id="tinh-nang" class="card">
+          <h2>2. Tính năng ứng dụng</h2>
+          <p>Ứng dụng cung cấp các tính năng chính sau:</p>
+          <ul>
+            <li><strong>Xem lịch:</strong> Lịch âm dương, lịch vạn niên, các ngày lễ tết, tiết khí trong năm.</li>
+            <li><strong>Xem ngày tốt:</strong> Tra cứu ngày tốt, ngày xấu cho các hoạt động như khai trương, cưới hỏi, động thổ, xuất hành.</li>
+            <li><strong>Tử vi:</strong> Lá số tử vi, luận giải vận mệnh, cung mệnh, sao chiếu mệnh theo ngày tháng năm sinh.</li>
+            <li><strong>Bát tự:</strong> Phân tích bát tự (tứ trụ), ngũ hành, can chi, xem mệnh hợp, mệnh khắc.</li>
+            <li><strong>Các công cụ khác:</strong> Xem hướng nhà, chọn màu sắc, vật phẩm phong thủy phù hợp.</li>
+          </ul>
+        </section>
+
+        <section id="du-lieu" class="card">
+          <h2>3. Dữ liệu chúng tôi thu thập</h2>
+          <h3>3.1. Thông tin bạn cung cấp</h3>
+          <ul>
+            <li><strong>Thông tin cá nhân để tính toán:</strong> Ngày, tháng, năm, giờ sinh (để tính tử vi, bát tự); giới tính; tên (nếu bạn nhập để lưu kết quả).</li>
+            <li><strong>Dữ liệu tra cứu:</strong> Ngày tháng bạn chọn để xem ngày tốt/xấu, các sự kiện bạn muốn kiểm tra.</li>
+            <li><strong>Cài đặt cá nhân:</strong> Ngôn ngữ, chủ đề giao diện, lịch sử tra cứu (nếu bạn bật lưu lịch sử).</li>
+          </ul>
+          <h3>3.2. Dữ liệu kỹ thuật</h3>
+          <ul>
+            <li>Phiên bản ứng dụng, hệ điều hành, thiết bị, múi giờ, ngôn ngữ hệ thống.</li>
+            <li>Nhật ký lỗi/hiệu năng ẩn danh để khắc phục sự cố (nếu bạn bật gửi chẩn đoán).</li>
+            <li>Thống kê sử dụng tính năng (không kèm thông tin nhận dạng cá nhân) để cải thiện trải nghiệm.</li>
+          </ul>
+          <h3>3.3. Dữ liệu chúng tôi không thu thập</h3>
+          <ul>
+            <li>Thông tin tài chính, thẻ tín dụng, tài khoản ngân hàng.</li>
+            <li>Danh bạ, ảnh, vị trí chính xác (trừ múi giờ để tính toán chính xác), micro, camera.</li>
+            <li>Dữ liệu từ các ứng dụng khác trên thiết bị của bạn.</li>
+          </ul>
+          <div class="note"><strong>Lưu ý:</strong> Thông tin ngày sinh, giờ sinh bạn nhập vào chỉ được sử dụng để tính toán và hiển thị kết quả tử vi, bát tự. Chúng tôi không chia sẻ thông tin này với bên thứ ba nếu không có sự đồng ý của bạn.</div>
+        </section>
+
+        <section id="muc-dich" class="card">
+          <h2>4. Mục đích sử dụng dữ liệu</h2>
+          <ul>
+            <li><strong>Cung cấp tính năng:</strong> Tính toán và hiển thị kết quả lịch âm dương, ngày tốt/xấu, tử vi, bát tự theo thông tin bạn cung cấp.</li>
+            <li><strong>Lưu trữ lịch sử:</strong> Lưu các kết quả tra cứu gần đây (nếu bạn bật tính năng này) để bạn dễ dàng xem lại.</li>
+            <li><strong>Cải thiện dịch vụ:</strong> Phân tích cách sử dụng để tối ưu hóa giao diện, thêm tính năng mới, sửa lỗi.</li>
+            <li><strong>Bảo mật:</strong> Phát hiện và ngăn chặn hành vi lạm dụng, tấn công hệ thống.</li>
+            <li><strong>Tuân thủ pháp luật:</strong> Đáp ứng yêu cầu từ cơ quan chức năng khi có yêu cầu hợp lệ.</li>
+          </ul>
+        </section>
+
+        <section id="luu-tru" class="card">
+          <h2>5. Lưu trữ & bảo mật</h2>
+          <ul>
+            <li><strong>Trên thiết bị:</strong> Nhiều dữ liệu như lịch sử tra cứu, cài đặt cá nhân được lưu cục bộ trên thiết bị của bạn (LocalStorage/IndexedDB), không rời khỏi thiết bị trừ khi bạn bật đồng bộ.</li>
+            <li><strong>Khi đồng bộ (nếu có):</strong> Nếu bạn bật tính năng đồng bộ đa thiết bị, dữ liệu sẽ được mã hóa khi truyền (HTTPS) và lưu trữ trên máy chủ với kiểm soát truy cập hợp lý.</li>
+            <li><strong>Thời gian lưu trữ:</strong> Giữ dữ liệu chỉ trong thời gian cần thiết cho mục đích nêu trên hoặc cho đến khi bạn yêu cầu xóa. Bạn có thể xóa lịch sử tra cứu bất cứ lúc nào trong ứng dụng.</li>
+            <li><strong>Bảo mật:</strong> Chúng tôi áp dụng các biện pháp kỹ thuật và tổ chức hợp lý để bảo vệ dữ liệu khỏi truy cập trái phép, mất mát hoặc phá hủy.</li>
+          </ul>
+        </section>
+
+        <section id="chia-se" class="card">
+          <h2>6. Chia sẻ với bên thứ ba</h2>
+          <p>Chúng tôi <strong>không bán</strong> dữ liệu cá nhân của bạn. Việc chia sẻ (nếu có) chỉ bao gồm:</p>
+          <ul>
+            <li><strong>Nhà cung cấp dịch vụ:</strong> Hạ tầng máy chủ, dịch vụ phân tích hiệu năng, gửi thông báo (nếu có) – tất cả đều tuân thủ các cam kết bảo mật nghiêm ngặt.</li>
+            <li><strong>Tuân thủ pháp luật:</strong> Khi có yêu cầu hợp lệ từ cơ quan chức năng theo quy định pháp luật hiện hành.</li>
+            <li><strong>Bảo vệ quyền lợi:</strong> Trong trường hợp cần thiết để bảo vệ quyền, tài sản hoặc an toàn của chúng tôi, người dùng hoặc bên thứ ba.</li>
+          </ul>
+        </section>
+
+        <section id="quyen-cua-ban" class="card">
+          <h2>7. Quyền của bạn</h2>
+          <p>Bạn có các quyền sau đây liên quan đến dữ liệu cá nhân:</p>
+          <ul>
+            <li><strong>Truy cập:</strong> Xem dữ liệu cá nhân mà chúng tôi lưu trữ về bạn (nếu có).</li>
+            <li><strong>Chỉnh sửa:</strong> Cập nhật, sửa đổi thông tin cá nhân trong ứng dụng.</li>
+            <li><strong>Xóa:</strong> Xóa lịch sử tra cứu, dữ liệu cá nhân trong ứng dụng hoặc yêu cầu xóa dữ liệu trên máy chủ (nếu có đồng bộ) qua kênh liên hệ.</li>
+            <li><strong>Từ chối:</strong> Tắt các tính năng thu thập dữ liệu không cần thiết (ví dụ: tắt gửi chẩn đoán, tắt lưu lịch sử).</li>
+            <li><strong>Rút lại đồng ý:</strong> Rút lại sự đồng ý về xử lý dữ liệu bất cứ lúc nào (một số tính năng có thể bị giới hạn).</li>
+            <li><strong>Khiếu nại:</strong> Khiếu nại với cơ quan quản lý nếu bạn cho rằng quyền riêng tư của mình bị vi phạm.</li>
+          </ul>
+        </section>
+
+        <section id="tu-vi-bat-tu" class="card">
+          <h2>8. Lưu ý về tử vi & bát tự</h2>
+          <div class="warn">
+            <strong>Quan trọng:</strong> Các kết quả tử vi, bát tự, xem ngày tốt/xấu được tính toán dựa trên các thuật toán và kiến thức phong thủy truyền thống. Kết quả chỉ mang tính chất <strong>tham khảo</strong> và <strong>giải trí</strong>.
+          </div>
+          <ul>
+            <li>Chúng tôi không đảm bảo tính chính xác tuyệt đối của các kết quả tính toán.</li>
+            <li>Kết quả không thay thế cho tư vấn chuyên nghiệp từ các chuyên gia phong thủy, tử vi có kinh nghiệm.</li>
+            <li>Bạn nên cân nhắc kỹ trước khi đưa ra các quyết định quan trọng dựa trên kết quả từ ứng dụng.</li>
+            <li>Chúng tôi không chịu trách nhiệm về bất kỳ quyết định hoặc hành động nào bạn thực hiện dựa trên kết quả từ ứng dụng.</li>
+          </ul>
+        </section>
+
+        <section id="dieu-khoan" class="card">
+          <h2>9. Điều khoản sử dụng</h2>
+          <h3>9.1. Sử dụng hợp lệ</h3>
+          <ul>
+            <li>Chỉ sử dụng ứng dụng cho mục đích cá nhân, hợp pháp, tuân thủ pháp luật Việt Nam và quốc tế.</li>
+            <li>Không sử dụng ứng dụng để lừa đảo, gây hiểu lầm, hoặc thực hiện các hành vi bất hợp pháp.</li>
+            <li>Không can thiệp, đảo ngược, khai thác lỗ hổng, tấn công hệ thống hoặc sử dụng công cụ tự động để truy cập dịch vụ.</li>
+            <li>Không sao chép, phân phối, sửa đổi mã nguồn hoặc giao diện ứng dụng khi chưa có sự cho phép.</li>
+          </ul>
+          <h3>9.2. Quyền sở hữu trí tuệ</h3>
+          <p>Ứng dụng Phong Thủy và tất cả các thành phần liên quan (thương hiệu, giao diện, mã nguồn, nội dung, thuật toán) thuộc quyền sở hữu hoặc được cấp phép hợp pháp bởi chúng tôi. Bạn không được sao chép, phân phối, sửa đổi hoặc tạo ra các sản phẩm phái sinh khi chưa có sự cho phép bằng văn bản.</p>
+          <h3>9.3. Giới hạn trách nhiệm</h3>
+          <ul>
+            <li>Chúng tôi nỗ lực duy trì tính chính xác và độ tin cậy của ứng dụng, nhưng không đảm bảo rằng ứng dụng sẽ luôn hoạt động không gián đoạn, không có lỗi hoặc an toàn tuyệt đối.</li>
+            <li>Trong phạm vi pháp luật cho phép, chúng tôi không chịu trách nhiệm đối với bất kỳ thiệt hại trực tiếp, gián tiếp, ngẫu nhiên, đặc biệt hoặc hậu quả phát sinh từ việc sử dụng hoặc không thể sử dụng ứng dụng.</li>
+            <li>Chúng tôi không chịu trách nhiệm về các quyết định hoặc hành động bạn thực hiện dựa trên kết quả từ ứng dụng.</li>
+          </ul>
+          <h3>9.4. Thay đổi dịch vụ</h3>
+          <p>Chúng tôi có quyền cập nhật, tạm ngừng, thay đổi hoặc chấm dứt bất kỳ tính năng nào của ứng dụng để cải thiện trải nghiệm người dùng, bảo mật hoặc vì lý do kỹ thuật. Chúng tôi sẽ thông báo hợp lý nếu có thay đổi đáng kể ảnh hưởng đến người dùng.</p>
+          <h3>9.5. Chấm dứt sử dụng</h3>
+          <p>Chúng tôi có quyền tạm ngừng hoặc chấm dứt quyền truy cập của bạn vào ứng dụng nếu phát hiện bạn vi phạm các điều khoản này hoặc có hành vi lạm dụng dịch vụ.</p>
+        </section>
+
+        <section id="cap-nhat" class="card">
+          <h2>10. Thay đổi & hiệu lực</h2>
+          <p>Chúng tôi có thể cập nhật tài liệu Chính sách quyền riêng tư và Điều khoản sử dụng này theo thời gian để phản ánh các thay đổi về tính năng, quy định pháp luật hoặc thực tiễn kinh doanh. Phiên bản mới sẽ được công bố tại trang này với ngày hiệu lực tương ứng.</p>
+          <p>Việc bạn tiếp tục sử dụng ứng dụng sau khi chính sách mới có hiệu lực nghĩa là bạn đã đọc, hiểu và chấp nhận các điều khoản mới. Nếu bạn không đồng ý với các thay đổi, vui lòng ngừng sử dụng ứng dụng và xóa dữ liệu nếu cần.</p>
+          <p class="meta">Chúng tôi khuyến nghị bạn thường xuyên xem lại trang này để cập nhật các thay đổi.</p>
+        </section>
+
+        <section id="lien-he" class="card">
+          <h2>11. Liên hệ</h2>
+          <p>Nếu bạn có bất kỳ câu hỏi, yêu cầu, khiếu nại hoặc đề xuất liên quan đến Chính sách quyền riêng tư, Điều khoản sử dụng hoặc cách chúng tôi xử lý dữ liệu cá nhân, vui lòng liên hệ với chúng tôi:</p>
+          <ul>
+            <li>Email: <a href="mailto:phongdevinfo@gmail.com">phongdevinfo@gmail.com</a></li>
+          </ul>
+          <p>Chúng tôi sẽ phản hồi yêu cầu của bạn trong thời gian sớm nhất có thể, thường là trong vòng 30 ngày làm việc.</p>
+        </section>
+      </main>
+
+      <aside class="side">
+        <div class="card">
+          <h3>Tóm tắt nhanh</h3>
+          <ul>
+            <li>Thu thập thông tin ngày sinh, giờ sinh để tính tử vi, bát tự.</li>
+            <li>Lưu trữ chủ yếu trên thiết bị; đồng bộ chỉ khi bạn bật.</li>
+            <li>Không chia sẻ dữ liệu cá nhân với bên thứ ba.</li>
+            <li>Kết quả chỉ mang tính tham khảo, không thay thế tư vấn chuyên nghiệp.</li>
+            <li>Có thể xóa/sửa dữ liệu bất cứ lúc nào.</li>
+          </ul>
+          <p class="meta">Luôn cập nhật ứng dụng để nhận các bản vá bảo mật và tính năng mới nhất.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © 2025 Ứng dụng Phong Thủy. Mọi quyền được bảo lưu.
+    </footer>
+  </div>
+</body>
+</html>
+
