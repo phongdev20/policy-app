@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lịch Phương Đông | Chính sách & Điều khoản</title>
+  <meta name="description" content="Chính sách quyền riêng tư và điều khoản sử dụng của ứng dụng Lịch Phương Đông – xem lịch, ghi chú và ngày kỷ niệm.">
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --fg: #1a1a1a;
+      --muted: #6b6b6b;
+      --card: #ffffff;
+      --border: #e8e6e1;
+      --brand: #8b4513;
+      --brand-2: #d4a574;
+      --accent: #c9a961;
+      --link: #8b4513;
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(139,69,19,0.08) 0%, rgba(212,165,116,0.05) 50%, rgba(201,169,97,0.08) 100%);
+      border-bottom: 1px solid rgba(139,69,19,0.12);
+      padding: 32px 0 18px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px 64px;
+    }
+    header { padding: 4px 0 12px; }
+    h1 { margin: 0; font-size: 30px; letter-spacing: -0.01em; color: var(--brand); }
+    .subtitle { margin: 10px 0 6px; color: var(--muted); }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(139,69,19,0.12);
+      color: #8b4513;
+      border: 1px solid rgba(139,69,19,0.18);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+    .meta { color: var(--muted); font-size: 14px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: flex-start; }
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: 1fr 280px; }
+      .side { position: sticky; top: 18px; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 20px 18px;
+      box-shadow: 0 12px 50px rgba(15,23,42,0.06);
+    }
+    h2 { font-size: 21px; margin: 22px 0 10px; letter-spacing: -0.01em; color: var(--brand); }
+    h3 { font-size: 16px; margin: 16px 0 6px; }
+    p { margin: 8px 0 10px; }
+    ul { margin: 8px 0 12px; padding-left: 20px; }
+    li { margin: 6px 0; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .toc ul { list-style: none; padding: 0; margin: 10px 0 0; }
+    .toc li { margin: 8px 0; }
+    .toc a { color: var(--fg); display: inline-block; padding: 6px 8px; border-radius: 8px; }
+    .toc a:hover { background: rgba(139,69,19,0.08); }
+    .pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(201,169,97,0.15);
+      color: #8b6f3d;
+      border: 1px solid rgba(201,169,97,0.3);
+      font-size: 12px;
+    }
+    .note {
+      background: rgba(139,69,19,0.06);
+      border: 1px solid rgba(139,69,19,0.18);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      color: #1a1a1a;
+    }
+    .highlight {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      color: #166534;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <header>
+        <div class="badge">Lịch Phương Đông</div>
+        <h1>Chính sách quyền riêng tư & Điều khoản sử dụng</h1>
+        <p class="subtitle">Ứng dụng Lịch Phương Đông cung cấp công cụ xem lịch, lưu ghi chú và quản lý ngày kỷ niệm. Toàn bộ dữ liệu được lưu trữ trên thiết bị của bạn, không thu thập hay chia sẻ thông tin cá nhân.</p>
+      </header>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+      <main>
+        <section class="card toc" aria-label="Mục lục">
+          <strong>Mục lục</strong>
+          <ul>
+            <li><a href="#tong-quan">1. Tổng quan & phạm vi</a></li>
+            <li><a href="#tinh-nang">2. Tính năng ứng dụng</a></li>
+            <li><a href="#du-lieu">3. Dữ liệu & quyền riêng tư</a></li>
+            <li><a href="#luu-tru">4. Lưu trữ dữ liệu</a></li>
+            <li><a href="#bao-mat">5. Bảo mật</a></li>
+            <li><a href="#quyen-cua-ban">6. Quyền của bạn</a></li>
+            <li><a href="#dieu-khoan">7. Điều khoản sử dụng</a></li>
+            <li><a href="#cap-nhat">8. Thay đổi & hiệu lực</a></li>
+            <li><a href="#lien-he">9. Liên hệ</a></li>
+          </ul>
+        </section>
+
+        <section id="tong-quan" class="card">
+          <h2>1. Tổng quan & phạm vi</h2>
+          <p>Tài liệu này áp dụng cho ứng dụng Lịch Phương Đông ("Ứng dụng", "chúng tôi"), mô tả cách chúng tôi xử lý dữ liệu và các điều khoản khi bạn sử dụng ứng dụng để xem lịch, lưu ghi chú và quản lý ngày kỷ niệm.</p>
+          <div class="highlight">
+            <strong>Cam kết quan trọng:</strong> Ứng dụng được thiết kế với nguyên tắc bảo vệ quyền riêng tư tối đa. Toàn bộ dữ liệu của bạn (ghi chú, ngày kỷ niệm, cài đặt) được lưu trữ cục bộ trên thiết bị của bạn và không được gửi lên máy chủ hay chia sẻ với bên thứ ba.
+          </div>
+        </section>
+
+        <section id="tinh-nang" class="card">
+          <h2>2. Tính năng ứng dụng</h2>
+          <p>Ứng dụng cung cấp các tính năng chính sau:</p>
+          <ul>
+            <li><strong>Xem lịch phương đông:</strong> Hiển thị lịch âm dương, lịch vạn niên, các ngày lễ tết, tiết khí trong năm.</li>
+            <li><strong>Ghi chú:</strong> Lưu trữ ghi chú cá nhân theo ngày, tháng, năm để bạn ghi nhớ các sự kiện, công việc quan trọng.</li>
+            <li><strong>Ngày kỷ niệm:</strong> Quản lý và nhắc nhở các ngày kỷ niệm quan trọng như sinh nhật, ngày cưới, ngày đặc biệt.</li>
+            <li><strong>Cài đặt cá nhân:</strong> Tùy chỉnh giao diện, ngôn ngữ, múi giờ theo sở thích của bạn.</li>
+          </ul>
+        </section>
+
+        <section id="du-lieu" class="card">
+          <h2>3. Dữ liệu & quyền riêng tư</h2>
+          <h3>3.1. Dữ liệu được lưu trữ trên thiết bị</h3>
+          <p>Ứng dụng lưu trữ các dữ liệu sau trên thiết bị của bạn (LocalStorage/IndexedDB):</p>
+          <ul>
+            <li><strong>Ghi chú cá nhân:</strong> Nội dung ghi chú bạn nhập vào ứng dụng.</li>
+            <li><strong>Ngày kỷ niệm:</strong> Thông tin về các ngày kỷ niệm bạn đã thêm (tên sự kiện, ngày tháng, ghi chú kèm theo).</li>
+            <li><strong>Cài đặt ứng dụng:</strong> Tùy chọn giao diện, ngôn ngữ, múi giờ, và các thiết lập khác.</li>
+            <li><strong>Lịch sử xem:</strong> Ngày tháng bạn đã xem gần đây (nếu tính năng này được bật).</li>
+          </ul>
+          <h3>3.2. Dữ liệu chúng tôi KHÔNG thu thập</h3>
+          <div class="note">
+            <strong>Quan trọng:</strong> Ứng dụng <strong>KHÔNG thu thập, không gửi, không chia sẻ</strong> bất kỳ dữ liệu nào của bạn lên máy chủ hay với bên thứ ba. Cụ thể:
+          </div>
+          <ul>
+            <li>Không thu thập thông tin cá nhân (tên, email, số điện thoại, địa chỉ).</li>
+            <li>Không thu thập nội dung ghi chú hay ngày kỷ niệm của bạn.</li>
+            <li>Không thu thập dữ liệu vị trí, danh bạ, ảnh, micro, camera.</li>
+            <li>Không thu thập thông tin thiết bị để nhận dạng bạn.</li>
+            <li>Không sử dụng cookie hay công cụ theo dõi để thu thập dữ liệu.</li>
+            <li>Không gửi dữ liệu phân tích sử dụng lên máy chủ.</li>
+          </ul>
+          <h3>3.3. Dữ liệu kỹ thuật (nếu có)</h3>
+          <p>Trong một số trường hợp, ứng dụng có thể ghi lại nhật ký lỗi cục bộ trên thiết bị để giúp bạn khắc phục sự cố. Nhật ký này chỉ tồn tại trên thiết bị của bạn và không được gửi đi.</p>
+        </section>
+
+        <section id="luu-tru" class="card">
+          <h2>4. Lưu trữ dữ liệu</h2>
+          <div class="highlight">
+            <strong>Lưu trữ cục bộ:</strong> Toàn bộ dữ liệu của bạn được lưu trữ trên thiết bị của bạn thông qua LocalStorage hoặc IndexedDB của trình duyệt. Dữ liệu không rời khỏi thiết bị của bạn.
+          </div>
+          <ul>
+            <li><strong>Vị trí lưu trữ:</strong> Dữ liệu được lưu trong bộ nhớ trình duyệt trên thiết bị của bạn.</li>
+            <li><strong>Đồng bộ đa thiết bị:</strong> Ứng dụng hiện tại không hỗ trợ đồng bộ dữ liệu giữa các thiết bị. Mỗi thiết bị có dữ liệu riêng biệt.</li>
+            <li><strong>Xóa dữ liệu:</strong> Bạn có thể xóa dữ liệu bất cứ lúc nào thông qua cài đặt ứng dụng hoặc xóa dữ liệu trình duyệt. Khi bạn xóa ứng dụng, tất cả dữ liệu sẽ bị xóa.</li>
+            <li><strong>Sao lưu:</strong> Chúng tôi khuyến nghị bạn tự sao lưu dữ liệu quan trọng (ghi chú, ngày kỷ niệm) bằng cách xuất ra file hoặc ghi chép lại.</li>
+          </ul>
+        </section>
+
+        <section id="bao-mat" class="card">
+          <h2>5. Bảo mật</h2>
+          <ul>
+            <li><strong>Bảo vệ dữ liệu cục bộ:</strong> Dữ liệu được lưu trữ trong môi trường bảo mật của trình duyệt, chỉ ứng dụng mới có thể truy cập.</li>
+            <li><strong>Không có kết nối mạng:</strong> Ứng dụng hoạt động hoàn toàn offline, không cần kết nối internet để sử dụng các tính năng cơ bản, giảm thiểu rủi ro bảo mật.</li>
+            <li><strong>Không có máy chủ:</strong> Vì không có máy chủ lưu trữ dữ liệu, không có nguy cơ bị tấn công hay rò rỉ dữ liệu từ phía máy chủ.</li>
+            <li><strong>Bảo mật thiết bị:</strong> Chúng tôi khuyến nghị bạn bảo vệ thiết bị bằng mật khẩu, mã PIN hoặc sinh trắc học để ngăn người khác truy cập dữ liệu của bạn.</li>
+          </ul>
+        </section>
+
+        <section id="quyen-cua-ban" class="card">
+          <h2>6. Quyền của bạn</h2>
+          <p>Bạn có toàn quyền kiểm soát dữ liệu của mình:</p>
+          <ul>
+            <li><strong>Truy cập:</strong> Bạn có thể xem tất cả dữ liệu (ghi chú, ngày kỷ niệm) trực tiếp trong ứng dụng.</li>
+            <li><strong>Chỉnh sửa:</strong> Bạn có thể thêm, sửa, xóa ghi chú và ngày kỷ niệm bất cứ lúc nào.</li>
+            <li><strong>Xóa:</strong> Bạn có thể xóa toàn bộ dữ liệu thông qua cài đặt ứng dụng hoặc xóa dữ liệu trình duyệt.</li>
+            <li><strong>Xuất dữ liệu:</strong> Nếu ứng dụng hỗ trợ tính năng xuất, bạn có thể xuất dữ liệu ra file để sao lưu.</li>
+            <li><strong>Quyền sở hữu:</strong> Bạn sở hữu hoàn toàn dữ liệu của mình. Chúng tôi không có quyền truy cập hay sử dụng dữ liệu của bạn.</li>
+          </ul>
+        </section>
+
+        <section id="dieu-khoan" class="card">
+          <h2>7. Điều khoản sử dụng</h2>
+          <h3>7.1. Sử dụng hợp lệ</h3>
+          <ul>
+            <li>Chỉ sử dụng ứng dụng cho mục đích cá nhân, hợp pháp, tuân thủ pháp luật Việt Nam và quốc tế.</li>
+            <li>Không sử dụng ứng dụng để lưu trữ hoặc phát tán nội dung bất hợp pháp, vi phạm quyền của người khác.</li>
+            <li>Không can thiệp, đảo ngược, khai thác lỗ hổng, tấn công hệ thống hoặc sử dụng công cụ tự động để truy cập dịch vụ.</li>
+            <li>Không sao chép, phân phối, sửa đổi mã nguồn hoặc giao diện ứng dụng khi chưa có sự cho phép.</li>
+          </ul>
+          <h3>7.2. Quyền sở hữu trí tuệ</h3>
+          <p>Ứng dụng Lịch Phương Đông và tất cả các thành phần liên quan (thương hiệu, giao diện, mã nguồn, nội dung) thuộc quyền sở hữu hoặc được cấp phép hợp pháp bởi chúng tôi. Bạn không được sao chép, phân phối, sửa đổi hoặc tạo ra các sản phẩm phái sinh khi chưa có sự cho phép bằng văn bản.</p>
+          <h3>7.3. Giới hạn trách nhiệm</h3>
+          <ul>
+            <li>Chúng tôi nỗ lực duy trì tính chính xác và độ tin cậy của ứng dụng, nhưng không đảm bảo rằng ứng dụng sẽ luôn hoạt động không gián đoạn, không có lỗi hoặc an toàn tuyệt đối.</li>
+            <li>Trong phạm vi pháp luật cho phép, chúng tôi không chịu trách nhiệm đối với bất kỳ thiệt hại trực tiếp, gián tiếp, ngẫu nhiên, đặc biệt hoặc hậu quả phát sinh từ việc sử dụng hoặc không thể sử dụng ứng dụng.</li>
+            <li>Chúng tôi không chịu trách nhiệm về việc mất mát dữ liệu do lỗi thiết bị, xóa nhầm, hoặc các sự cố kỹ thuật khác. Bạn nên tự sao lưu dữ liệu quan trọng.</li>
+          </ul>
+          <h3>7.4. Thay đổi dịch vụ</h3>
+          <p>Chúng tôi có quyền cập nhật, tạm ngừng, thay đổi hoặc chấm dứt bất kỳ tính năng nào của ứng dụng để cải thiện trải nghiệm người dùng, bảo mật hoặc vì lý do kỹ thuật. Chúng tôi sẽ thông báo hợp lý nếu có thay đổi đáng kể ảnh hưởng đến người dùng.</p>
+          <h3>7.5. Chấm dứt sử dụng</h3>
+          <p>Chúng tôi có quyền tạm ngừng hoặc chấm dứt quyền truy cập của bạn vào ứng dụng nếu phát hiện bạn vi phạm các điều khoản này hoặc có hành vi lạm dụng dịch vụ.</p>
+        </section>
+
+        <section id="cap-nhat" class="card">
+          <h2>8. Thay đổi & hiệu lực</h2>
+          <p>Chúng tôi có thể cập nhật tài liệu Chính sách quyền riêng tư và Điều khoản sử dụng này theo thời gian để phản ánh các thay đổi về tính năng, quy định pháp luật hoặc thực tiễn kinh doanh. Phiên bản mới sẽ được công bố tại trang này với ngày hiệu lực tương ứng.</p>
+          <p>Việc bạn tiếp tục sử dụng ứng dụng sau khi chính sách mới có hiệu lực nghĩa là bạn đã đọc, hiểu và chấp nhận các điều khoản mới. Nếu bạn không đồng ý với các thay đổi, vui lòng ngừng sử dụng ứng dụng và xóa dữ liệu nếu cần.</p>
+          <p class="meta">Chúng tôi khuyến nghị bạn thường xuyên xem lại trang này để cập nhật các thay đổi.</p>
+        </section>
+
+        <section id="lien-he" class="card">
+          <h2>9. Liên hệ</h2>
+          <p>Nếu bạn có bất kỳ câu hỏi, yêu cầu, khiếu nại hoặc đề xuất liên quan đến Chính sách quyền riêng tư, Điều khoản sử dụng hoặc cách chúng tôi xử lý dữ liệu, vui lòng liên hệ với chúng tôi:</p>
+          <ul>
+            <li>Email: <a href="mailto:phongdevinfo@gmail.com">phongdevinfo@gmail.com</a></li>
+          </ul>
+          <p>Chúng tôi sẽ phản hồi yêu cầu của bạn trong thời gian sớm nhất có thể, thường là trong vòng 30 ngày làm việc.</p>
+        </section>
+      </main>
+
+      <aside class="side">
+        <div class="card">
+          <h3>Tóm tắt nhanh</h3>
+          <ul>
+            <li>✅ Dữ liệu lưu trữ hoàn toàn trên thiết bị của bạn.</li>
+            <li>✅ Không thu thập, không gửi, không chia sẻ dữ liệu.</li>
+            <li>✅ Hoạt động offline, không cần internet.</li>
+            <li>✅ Bạn có toàn quyền kiểm soát dữ liệu.</li>
+            <li>✅ Không có cookie hay công cụ theo dõi.</li>
+          </ul>
+          <div class="highlight" style="margin-top: 16px;">
+            <strong>Lưu ý:</strong> Hãy tự sao lưu dữ liệu quan trọng. Khi xóa ứng dụng hoặc dữ liệu trình duyệt, tất cả dữ liệu sẽ bị mất.
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © 2025 Ứng dụng Lịch Phương Đông. Mọi quyền được bảo lưu.
+    </footer>
+  </div>
+</body>
+</html>
+
