@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chính sách Bảo mật &amp; Điều khoản Sử dụng — Alive</title>
+  <style>
+    :root {
+      --primary: #4F5DD8;
+      --primary-dark: #1B2A6B;
+      --text: #1a1a2e;
+      --muted: #6b7280;
+      --bg: #f0f2ff;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    header .tagline {
+      font-size: 14px;
+      opacity: 0.75;
+      font-weight: 400;
+    }
+
+    /* ── Tab nav ── */
+    nav {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 14px 24px;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    nav a:hover { color: var(--primary); }
+    nav a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    /* ── Container ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── Section ── */
+    .section { margin-bottom: 56px; }
+    .section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+    .section .subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, var(--primary), transparent);
+      margin: 48px 0;
+      border: none;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 4px rgba(79,93,216,0.06);
+    }
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .card p, .card ul {
+      font-size: 14px;
+      color: #374151;
+    }
+    .card ul {
+      padding-left: 20px;
+      margin-top: 6px;
+    }
+    .card ul li { margin-bottom: 4px; }
+
+    /* ── Highlight box ── */
+    .highlight-box {
+      background: linear-gradient(135deg, #eef0ff 0%, #f5f6ff 100%);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: #3730a3;
+      font-weight: 500;
+      margin: 20px 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+    footer strong { color: var(--primary-dark); }
+
+    @media (max-width: 480px) {
+      header { padding: 36px 16px 32px; }
+      header .logo { font-size: 22px; }
+      .container { padding: 28px 16px 60px; }
+      nav a { padding: 12px 16px; font-size: 13px; }
+      .card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="logo">Alive</div>
+    <p class="tagline">Ứng dụng điểm danh &amp; an toàn hàng ngày</p>
+  </header>
+
+  <!-- ── Tab nav ── -->
+  <nav>
+    <a href="#terms">Điều khoản Sử dụng</a>
+    <a href="#privacy">Chính sách Bảo mật</a>
+  </nav>
+
+  <!-- ── Content ── -->
+  <div class="container">
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- SECTION 1: ĐIỀU KHOẢN SỬ DỤNG         -->
+    <!-- ════════════════════════════════════════ -->
+    <div id="terms" class="section">
+      <h2>Điều khoản Sử dụng</h2>
+      <p class="subtitle">Cập nhật: Tháng 5 năm 2026</p>
+
+      <div class="highlight-box">
+        Khi sử dụng ứng dụng, bạn đồng ý với các điều khoản được liệt kê bên dưới.
+        Vui lòng đọc kỹ trước khi sử dụng dịch vụ.
+      </div>
+
+      <!-- 1. Chấp nhận điều khoản -->
+      <div class="card">
+        <h3><span class="num">1</span> Chấp nhận điều khoản</h3>
+        <p>
+          Bằng việc truy cập hoặc sử dụng ứng dụng <strong>Alive</strong>
+          (sau đây gọi là "Ứng dụng"), bạn xác nhận rằng đã đọc, hiểu và đồng ý
+          bị ràng buộc bởi các Điều khoản Sử dụng này. Nếu bạn không đồng ý với
+          bất kỳ phần nào của điều khoản, vui lòng ngừng sử dụng Ứng dụng.
+        </p>
+      </div>
+
+      <!-- 2. Mô tả dịch vụ -->
+      <div class="card">
+        <h3><span class="num">2</span> Mô tả dịch vụ</h3>
+        <p>Ứng dụng cung cấp các tính năng chính sau:</p>
+        <ul>
+          <li><strong>Điểm danh hàng ngày:</strong> Người dùng xác nhận an toàn bằng
+              cách nhấn nút điểm danh một lần mỗi ngày. Hệ thống ghi nhận chuỗi
+              (streak) số ngày điểm danh liên tiếp.</li>
+          <li><strong>Quản lý liên lạc khẩn cấp:</strong> Người dùng thêm tối đa
+              3 thành viên gia đình làm liên lạc khẩn cấp, nhận thông báo qua
+              email hoặc tin nhắn SMS/Zalo.</li>
+          <li><strong>Widget màn hình chính:</strong> Hiển thị số ngày điểm danh
+              và trạng thái hôm nay trên màn hình chính thiết bị (Android &amp; iOS).</li>
+          <li><strong>Lịch sử điểm danh:</strong> Xem lại 30 ngày gần nhất.</li>
+        </ul>
+      </div>
+
+      <!-- 3. Tài khoản -->
+      <div class="card">
+        <h3><span class="num">3</span> Tài khoản</h3>
+        <p>Để sử dụng Ứng dụng, bạn cần đăng ký tài khoản bằng số điện thoại và
+           mật khẩu. Yêu cầu:</p>
+        <ul>
+          <li>Số điện thoại: theo định dạng Việt Nam (bắt đầu bằng số 0, 9 chữ số).</li>
+          <li>Mật khẩu: tối thiểu 6 ký tự.</li>
+          <li>Tài khoản có vai trò mặc định là "người cao tuổi"; có thể chuyển
+              sang vai trò "gia đình" hoặc "quản trị".</li>
+          <li>Bạn chịu trách nhiệm bảo mật thông tin đăng nhập của mình.</li>
+        </ul>
+      </div>
+
+      <!-- 4. Liên lạc khẩn cấp -->
+      <div class="card">
+        <h3><span class="num">4</span> Liên lạc khẩn cấp</h3>
+        <p>
+          Người dùng có thể thêm tối đa 3 liên lạc khẩn cấp. Mỗi liên lạc gồm
+          họ tên, quan hệ, và kênh thông báo (email hoặc SMS/Zalo).
+          Chỉ người dùng sở hữu tài khoản mới có quyền thêm, chỉnh sửa hoặc
+          xóa liên lạc khẩn cấp.
+        </p>
+      </div>
+
+      <!-- 5. Thông báo tự động -->
+      <div class="card">
+        <h3><span class="num">5</span> Thông báo tự động</h3>
+        <p>
+          Nếu người dùng không điểm danh đúng quy định trong vòng 24 giờ,
+          hệ thống sẽ gửi tin nhắn cảnh báo đến liên lạc khẩn cấp đã đăng ký.
+          Số lượng email thông báo tối đa là 5 tin cho mỗi người dùng.
+          Số lượng này được đặt lại khi người dùng điểm danh thành công.
+        </p>
+      </div>
+
+      <!-- 6. Giới hạn sử dụng -->
+      <div class="card">
+        <h3><span class="num">6</span> Giới hạn sử dụng</h3>
+        <p>
+          Ứng dụng chỉ được sử dụng cho mục đích cá nhân. Người dùng không được
+          phép sử dụng Ứng dụng vào bất kỳ mục đích bất hợp pháp nào.
+          Người dùng cam kết không cố gắng truy cập trái phép vào hệ thống.
+        </p>
+      </div>
+
+      <!-- 7. Thay đổi điều khoản -->
+      <div class="card">
+        <h3><span class="num">7</span> Thay đổi điều khoản</h3>
+        <p>
+          Chúng tôi có quyền thay đổi các Điều khoản Sử dụng này bất kỳ lúc nào
+          mà không cần thông báo trước. Phiên bản cập nhật sẽ có hiệu lực ngay
+          khi được đăng tải. Việc tiếp tục sử dụng Ứng dụng sau khi thay đổi
+          có nghĩa là bạn chấp nhận các điều khoản mới.
+        </p>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- SECTION 2: CHÍNH SÁCH BẢO MẬT          -->
+    <!-- ════════════════════════════════════════ -->
+    <div id="privacy" class="section">
+      <h2>Chính sách Bảo mật</h2>
+      <p class="subtitle">Cập nhật: Tháng 5 năm 2026</p>
+
+      <!-- 1. Thông tin thu thập -->
+      <div class="card">
+        <h3><span class="num">1</span> Thông tin chúng tôi thu thập</h3>
+        <p>Chúng tôi thu thập các thông tin sau từ người dùng:</p>
+        <ul>
+          <li><strong>Tài khoản:</strong> Số điện thoại, mật khẩu (đã được mã hóa),
+              họ và tên, giới tính, ngày sinh.</li>
+          <li><strong>Điểm danh:</strong> Thời gian điểm danh và lịch sử 30 ngày gần nhất.</li>
+          <li><strong>Liên lạc khẩn cấp:</strong> Họ tên, quan hệ, kênh thông báo
+              (email hoặc số điện thoại) của tối đa 3 thành viên gia đình.</li>
+          <li><strong>Thiết bị:</strong> Mã định danh thiết bị (device ID) được lưu
+              trên máy chủ để xác thực tài khoản.</li>
+          <li><strong>Widget:</strong> Dữ liệu widget trên màn hình chính gồm
+              số ngày điểm danh, trạng thái hôm nay và ngày điểm danh gần nhất.
+              Không có thông tin cá nhân nhạy cảm nào được hiển thị trên widget.</li>
+        </ul>
+      </div>
+
+      <!-- 2. Mục đích sử dụng -->
+      <div class="card">
+        <h3><span class="num">2</span> Mục đích sử dụng thông tin</h3>
+        <p>Thông tin thu thập chỉ được sử dụng cho các mục đích sau:</p>
+        <ul>
+          <li>Cung cấp và duy trì dịch vụ điểm danh hàng ngày.</li>
+          <li>Gửi thông báo khẩn cấp đến liên lạc khẩn cấp khi người dùng bỏ lỡ
+              điểm danh theo quy định.</li>
+          <li>Xác thực và bảo mật tài khoản người dùng.</li>
+          <li>Cập nhật widget màn hình chính.</li>
+        </ul>
+      </div>
+
+      <!-- 3. Lưu trữ -->
+      <div class="card">
+        <h3><span class="num">3</span> Lưu trữ thông tin</h3>
+        <p>
+          Thông tin tài khoản và điểm danh được lưu trữ trên máy chủ của hệ thống.
+          Thông tin đăng nhập (token xác thực, mã người dùng, số điện thoại) được
+          lưu cục bộ trên thiết bị của người dùng qua bộ nhớ ứng dụng.
+          Dữ liệu widget được đồng bộ qua giao thức của hệ điều hành.
+        </p>
+      </div>
+
+      <!-- 4. Bảo mật -->
+      <div class="card">
+        <h3><span class="num">4</span> Bảo mật dữ liệu</h3>
+        <p>Chúng tôi áp dụng các biện pháp bảo mật sau:</p>
+        <ul>
+          <li>Mật khẩu được mã hóa bằng thuật toán bcrypt trước khi lưu trữ.</li>
+          <li>Tài khoản được xác thực bằng JSON Web Token (JWT).</li>
+          <li>Khi nhận phản hồi 401 (không xác thực), hệ thống tự động xóa
+              token và yêu cầu đăng nhập lại.</li>
+          <li>Người dùng có quyền xem, chỉnh sửa hoặc xóa thông tin cá nhân của
+              mình bất kỳ lúc nào thông qua Ứng dụng.</li>
+        </ul>
+      </div>
+
+      <!-- 5. Chia sẻ thông tin -->
+      <div class="card">
+        <h3><span class="num">5</span> Chia sẻ thông tin</h3>
+        <p>
+          Chúng tôi <strong>không chia sẻ</strong> danh sách liên lạc khẩn cấp
+          hoặc thông tin cá nhân của bạn với bất kỳ bên thứ ba nào không được
+          ủy quyền. Thông tin liên lạc khẩn cấp chỉ được sử dụng để gửi thông
+          báo trong trường hợp người dùng bỏ lỡ điểm danh. Chúng tôi sử dụng
+          dịch vụ email SMTP (Gmail) làm công cụ gửi thông báo tự động.
+        </p>
+      </div>
+
+      <!-- 6. Quyền của người dùng -->
+      <div class="card">
+        <h3><span class="num">6</span> Quyền của người dùng</h3>
+        <p>Người dùng có các quyền sau đối với dữ liệu cá nhân của mình:</p>
+        <ul>
+          <li>Xem toàn bộ thông tin cá nhân đã đăng ký.</li>
+          <li>Chỉnh sửa họ tên, giới tính, ngày sinh bất kỳ lúc nào.</li>
+          <li>Thêm, cập nhật hoặc xóa liên lạc khẩn cấp.</li>
+          <li>Xóa tài khoản và toàn bộ dữ liệu liên quan theo yêu cầu.</li>
+        </ul>
+      </div>
+
+      <!-- 7. Cookie & Theo dõi -->
+      <div class="card">
+        <h3><span class="num">7</span> Cookie và công cụ theo dõi</h3>
+        <p>
+          Ứng dụng <strong>không sử dụng cookie</strong> hoặc bất kỳ công cụ
+          theo dõi người dùng nào khác.
+        </p>
+      </div>
+
+    </div>
+
+  </div><!-- /container -->
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p><strong>Alive</strong> &mdash; Tháng 5 năm 2026</p>
+    <p>Ứng dụng điểm danh &amp; an toàn hàng ngày cho người cao tuổi</p>
+  </footer>
+
+</body>
+</html>
