@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Điều khoản & Chính sách — Zentio</title>
+  <style>
+    :root {
+      --rose:     #c4708a;
+      --rose-dark:#8b3a5a;
+      --gold:     #c9a84c;
+      --cream:    #fdf8f6;
+      --text:     #2d2d2d;
+      --muted:    #7a6e78;
+      --card:     #ffffff;
+      --border:   #f0e4e8;
+      --shadow:   rgba(196, 112, 138, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--rose-dark) 0%, var(--rose) 60%, var(--gold) 100%);
+      color: #fff;
+      padding: 52px 24px 44px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -20px;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .logo span { color: var(--gold); }
+    .tagline {
+      font-size: 13px;
+      opacity: 0.82;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 13px;
+      padding: 15px 26px;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: var(--rose); }
+    nav a.active {
+      color: var(--rose);
+      border-bottom-color: var(--rose);
+    }
+
+    /* ── Container ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 44px 24px 80px;
+    }
+
+    /* ── Section ── */
+    .section { margin-bottom: 52px; }
+    .section h2 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--rose-dark);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section h2 .icon {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--rose), var(--gold));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section h2 .icon svg { width: 15px; height: 15px; fill: #fff; }
+    .subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      padding-left: 38px;
+    }
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, var(--rose), transparent);
+      margin: 44px 0;
+      border: none;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 6px 28px var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .card + .card { margin-top: 16px; }
+
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h3::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--rose);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .card p { margin-bottom: 10px; font-size: 14.5px; color: #444; }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* ── Feature pills ── */
+    .features {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin: 16px 0 6px;
+    }
+    .feature-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: linear-gradient(135deg, #fff5f8, #fff9fb);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 12.5px;
+      color: var(--rose-dark);
+      font-weight: 500;
+    }
+    .feature-pill svg { width: 12px; height: 12px; fill: var(--rose); }
+
+    /* ── Lists ── */
+    ul { padding-left: 20px; margin: 8px 0 12px; }
+    li { margin: 5px 0; font-size: 14.5px; color: #444; }
+    li strong { color: var(--text); }
+
+    /* ── Highlight box ── */
+    .highlight-box {
+      background: linear-gradient(135deg, #fff5f8, #faf0f3);
+      border: 1px solid #f5d0da;
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin: 16px 0;
+    }
+    .highlight-box p { font-size: 13.5px; color: var(--rose-dark); }
+
+    /* ── Two columns ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 560px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer a { color: var(--rose); text-decoration: none; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--rose-dark);
+      margin-bottom: 4px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 40px 20px 36px; }
+      .logo { font-size: 24px; }
+      .container { padding: 28px 16px 60px; }
+      .card { padding: 20px 16px; }
+      nav a { padding: 13px 16px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ZEN<span>TIO</span></div>
+  <p class="tagline">Điều khoản sử dụng &amp; Chính sách bảo mật</p>
+</header>
+
+<nav>
+  <a href="#terms">Điều khoản</a>
+  <a href="#privacy" class="active">Chính sách bảo mật</a>
+  <a href="#rights">Quyền lợi</a>
+  <a href="#contact">Liên hệ</a>
+</nav>
+
+<div class="container">
+
+  <!-- Intro -->
+  <div class="card" style="text-align:center; padding: 30px 26px;">
+    <p style="font-size:15px; color: var(--rose-dark); font-weight:600; margin-bottom:6px;">
+      Cập nhật lần cuối: Tháng 7, 2026
+    </p>
+    <p style="color: var(--muted); font-size: 13.5px;">
+      Chào mừng bạn đến với <strong>Zentio</strong> — nền tảng kết nối phong cách thời trang và chuyên gia trang điểm.
+      Chúng tôi cam kết bảo vệ quyền riêng tư và mang đến trải nghiệm an toàn cho người dùng.
+    </p>
+    <div class="features">
+      <span class="feature-pill">
+        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        Cập nhật phong cách thời trang
+      </span>
+      <span class="feature-pill">
+        <svg viewBox="0 0 24 24"><path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z"/></svg>
+        Tìm chuyên gia trang điểm
+      </span>
+      <span class="feature-pill">
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        Kết nối mẫu trang điểm
+      </span>
+    </div>
+  </div>
+
+  <hr class="divider" id="terms" />
+
+  <!-- 1. Điều khoản sử dụng -->
+  <div class="section">
+    <h2>
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+      </span>
+      1. Điều khoản sử dụng
+    </h2>
+    <p class="subtitle">Quy định về việc sử dụng ứng dụng Zentio</p>
+
+    <div class="card">
+      <h3>1.1. Chấp nhận điều khoản</h3>
+      <p>
+        Bằng việc tải xuống, cài đặt hoặc sử dụng ứng dụng <strong>Zentio</strong>, bạn đồng ý tuân thủ
+        và bị ràng buộc bởi các Điều khoản sử dụng và Chính sách bảo mật này.
+        Nếu bạn không đồng ý với bất kỳ phần nào, vui lòng ngừng sử dụng ứng dụng.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>1.2. Đối tượng sử dụng</h3>
+      <p>Zentio dành cho:</p>
+      <ul>
+        <li><strong>Người yêu thời trang:</strong> Cập nhật xu hướng, phong cách thời trang mới nhất</li>
+        <li><strong>Chuyên gia trang điểm (Makeup Artist):</strong> Giới thiệu dịch vụ, xây dựng thương hiệu cá nhân</li>
+        <li><strong>Mẫu trang điểm:</strong> Tạo portfolio, nhận cơ hội hợp tác với các thương hiệu</li>
+        <li><strong>Doanh nghiệp thời trang & làm đẹp:</strong> Tìm kiếm đối tác, influencer và tài năng</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1.3. Quyền và nghĩa vụ người dùng</h3>
+      <p>Bạn được quyền:</p>
+      <ul>
+        <li>Truy cập và sử dụng các tính năng của ứng dụng theo đúng mục đích</li>
+        <li>Tạo, chỉnh sửa hồ sơ cá nhân và nội dung của mình</li>
+        <li>Liên hệ và kết nối với chuyên gia trang điểm, mẫu trang điểm phù hợp</li>
+        <li>Yêu cầu xóa tài khoản và dữ liệu cá nhân theo quy định</li>
+      </ul>
+      <p style="margin-top:12px;">Bạn có nghĩa vụ:</p>
+      <ul>
+        <li>Không sử dụng ứng dụng cho mục đích bất hợp pháp, lừa đảo hoặc xâm phạm quyền lợi người khác</li>
+        <li>Không đăng tải nội dung vi phạm thuần phong mỹ tục, pháp luật Việt Nam</li>
+        <li>Không mạo danh người khác hoặc cung cấp thông tin sai lệch</li>
+        <li>Bảo mật thông tin tài khoản và không chia sẻ cho bên thứ ba</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1.4. Nội dung do người dùng tạo (UGC)</h3>
+      <p>
+        Khi đăng tải hình ảnh, video, đánh giá hoặc bất kỳ nội dung nào lên Zentio, bạn giữ quyền sở hữu
+        đối với nội dung đó. Tuy nhiên, bạn cấp cho Zentio quyền sử dụng, hiển thị và phân phối nội dung
+        trên nền tảng nhằm vận hành và quảng bá dịch vụ.
+      </p>
+      <div class="highlight-box">
+        <p><strong>Lưu ý:</strong> Bạn chịu trách nhiệm hoàn toàn về tính hợp pháp và quyền sở hữu trí tuệ
+        của nội dung mình đăng tải. Zentio không chịu trách nhiệm đối với nội dung do người dùng tạo ra.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" id="privacy" />
+
+  <!-- 2. Chính sách bảo mật -->
+  <div class="section">
+    <h2>
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+      </span>
+      2. Chính sách bảo mật
+    </h2>
+    <p class="subtitle">Cam kết bảo vệ thông tin cá nhân của bạn</p>
+
+    <div class="card">
+      <h3>2.1. Thông tin thu thập</h3>
+      <p>Zentio thu thập các loại thông tin sau:</p>
+      <div class="two-col">
+        <div>
+          <p style="font-weight:600; color: var(--rose-dark); margin-bottom:8px;">Thông tin nhận dạng</p>
+          <ul>
+            <li>Họ tên, email, số điện thoại</li>
+            <li>Ảnh đại diện & portfolio</li>
+            <li>Ngày sinh (tùy chọn)</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight:600; color: var(--rose-dark); margin-bottom:8px;">Thông tin hồ sơ nghề nghiệp</p>
+          <ul>
+            <li>Chuyên môn trang điểm/thời trang</li>
+            <li>Kinh nghiệm và chứng chỉ</li>
+            <li>Danh mục tác phẩm (hình ảnh/video)</li>
+          </ul>
+        </div>
+      </div>
+      <ul style="margin-top:12px;">
+        <li><strong>Thông tin thiết bị:</strong> Loại thiết bị, hệ điều hành, định danh thiết bị</li>
+        <li><strong>Nhật ký sử dụng:</strong> Tính năng truy cập, thời gian sử dụng, tương tác</li>
+        <li><strong>Thông tin vị trí:</strong> Để đề xuất chuyên gia/mẫu gần bạn (với sự đồng ý)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>2.2. Mục đích sử dụng thông tin</h3>
+      <p>Thông tin thu thập được sử dụng để:</p>
+      <ul>
+        <li>Tạo và quản lý tài khoản người dùng trên nền tảng Zentio</li>
+        <li>Kết nối người dùng với chuyên gia trang điểm và mẫu trang điểm phù hợp</li>
+        <li>Cập nhật và gợi ý xu hướng thời trang, phong cách mới</li>
+        <li>Cá nhân hóa trải nghiệm và nội dung hiển thị</li>
+        <li>Đảm bảo an ninh, ngăn chặn gian lận và hành vi vi phạm</li>
+        <li>Hỗ trợ khách hàng và xử lý khiếu nại</li>
+        <li>Tuân thủ các yêu cầu pháp lý theo quy định Việt Nam</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>2.3. Bảo mật dữ liệu</h3>
+      <p>Chúng tôi áp dụng các biện pháp bảo mật tiên tiến:</p>
+      <ul>
+        <li><strong>Mã hóa dữ liệu:</strong> SSL/TLS cho truyền dữ liệu, mã hóa AES cho lưu trữ</li>
+        <li><strong>Kiểm soát truy cập:</strong> Phân quyền nghiêm ngặt, xác thực hai yếu tố (2FA)</li>
+        <li><strong>Giám sát hệ thống:</strong> Phát hiện và ứng phó sự cố 24/7</li>
+        <li><strong>Lưu trữ an toàn:</strong> Dữ liệu được lưu trên hạ tầng cloud được chứng nhận bảo mật</li>
+        <li><strong>Đào tạo nhân sự:</strong> Chỉ nhân viên được ủy quyền mới được truy cập dữ liệu</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>2.4. Chia sẻ thông tin</h3>
+      <p>Zentio <strong>không bán</strong> thông tin cá nhân của bạn. Dữ liệu chỉ được chia sẻ trong:</p>
+      <ul>
+        <li>Với sự đồng ý rõ ràng của bạn cho từng mục đích cụ thể</li>
+        <li>Với các chuyên gia trang điểm/mẫu trang điểm khi bạn chủ động kết nối với họ</li>
+        <li>Với nhà cung cấp dịch vụ (hosting, phân tích) theo hợp đồng bảo mật</li>
+        <li>Theo yêu cầu của cơ quan pháp luật Việt Nam có thẩm quyền</li>
+        <li>Để bảo vệ quyền lợi, tài sản hoặc sự an toàn của Zentio và cộng đồng người dùng</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>2.5. Cookie và công nghệ theo dõi</h3>
+      <p>
+        Zentio sử dụng cookie và công nghệ tương tự để ghi nhớ sở thích, phân tích lưu lượng truy cập
+        và cải thiện dịch vụ. Bạn có thể từ chối cookie trong cài đặt trình duyệt, tuy nhiên điều này
+        có thể ảnh hưởng đến một số tính năng của ứng dụng.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" id="rights" />
+
+  <!-- 3. Quyền của người dùng -->
+  <div class="section">
+    <h2>
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+      </span>
+      3. Quyền của người dùng
+    </h2>
+    <p class="subtitle">Bạn có toàn quyền kiểm soát dữ liệu cá nhân của mình</p>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>Quyền truy cập</h3>
+        <p>Xem và tải về toàn bộ dữ liệu cá nhân bạn đã cung cấp cho Zentio, bao gồm hồ sơ, portfolio và lịch sử tương tác.</p>
+      </div>
+      <div class="card">
+        <h3>Quyền chỉnh sửa</h3>
+        <p>Yêu cầu cập nhật, chỉnh sửa hoặc bổ sung thông tin cá nhân không chính xác hoặc đã lỗi thời.</p>
+      </div>
+      <div class="card">
+        <h3>Quyền xóa dữ liệu</h3>
+        <p>Yêu cầu xóa tài khoản và toàn bộ dữ liệu cá nhân. Chúng tôi sẽ xử lý trong vòng 30 ngày theo quy định.</p>
+      </div>
+      <div class="card">
+        <h3>Quyền từ chối</h3>
+        <p>Từ chối thu thập dữ liệu nhất định hoặc rút lại sự đồng ý đã cấp. Một số tính năng có thể bị giới hạn.</p>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:16px;">
+      <p>
+        <strong>Để thực hiện quyền của bạn:</strong> Truy cập <strong>Cài đặt → Quyền riêng tư</strong> trong ứng dụng,
+        hoặc gửi email về <a href="mailto:phongdevinfo@gmail.com">phongdevinfo@gmail.com</a> với tiêu đề
+        <em>"Yêu cầu quyền riêng tư - Zentio"</em>.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 4. Giới hạn trách nhiệm -->
+  <div class="section">
+    <h2>
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      </span>
+      4. Giới hạn trách nhiệm
+    </h2>
+    <p class="subtitle">Các trường hợp giới hạn và loại trừ trách nhiệm</p>
+
+    <div class="card">
+      <h3>4.1. Nội dung của bên thứ ba</h3>
+      <p>
+        Zentio có thể chứa liên kết đến website hoặc dịch vụ của bên thứ ba (chuyên gia, mẫu, thương hiệu).
+        Chúng tôi không kiểm soát và không chịu trách nhiệm về nội dung, chính sách bảo mật hoặc thực tiễn
+        của bất kỳ bên thứ ba nào.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>4.2. Giao dịch giữa người dùng</h3>
+      <p>
+        Zentio là nền tảng kết nối. Các giao dịch, hợp đồng hoặc thỏa thuận giữa bạn và chuyên gia trang điểm,
+        mẫu trang điểm hoặc thương hiệu được thực hiện độc lập. Zentio không can thiệp và không chịu trách
+        nhiệm về các thỏa thuận đó.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>4.3. Gián đoạn dịch vụ</h3>
+      <p>
+        Chúng tôi không đảm bảo ứng dụng hoạt động liên tục, không lỗi hoặc không gián đoạn.
+        Zentio có quyền tạm ngừng dịch vụ để bảo trì, cập nhật hoặc theo yêu cầu pháp lý mà không cần
+        thông báo trước trong trường hợp khẩn cấp.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>4.4. Thiệt hại</h3>
+      <p>
+        Trong phạm vi tối đa được pháp luật Việt Nam cho phép, Zentio và các bên liên kết không chịu
+        trách nhiệm về bất kỳ thiệt hại trực tiếp, gián tiếp, ngẫu nhiên hoặc hậu quả nào phát sinh từ
+        việc sử dụng hoặc không thể sử dụng ứng dụng.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 5. Thay đổi điều khoản -->
+  <div class="section">
+    <h2>
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      </span>
+      5. Cập nhật điều khoản
+    </h2>
+    <p class="subtitle">Chính sách thay đổi và thông báo cho người dùng</p>
+
+    <div class="card">
+      <p>
+        Zentio có quyền cập nhật, sửa đổi hoặc bổ sung Điều khoản và Chính sách này bất cứ lúc nào.
+        Khi có thay đổi quan trọng, chúng tôi sẽ:
+      </p>
+      <ul>
+        <li>Thông báo qua ứng dụng (notification/push notification)</li>
+        <li>Cập nhật ngày "Cập nhật lần cuối" tại đầu trang</li>
+        <li>Lưu trữ các phiên bản trước để bạn có thể xem lại</li>
+      </ul>
+      <p>
+        Việc bạn tiếp tục sử dụng ứng dụng sau khi có thay đổi đồng nghĩa với việc bạn chấp nhận
+        các điều khoản mới. Nếu không đồng ý, vui lòng ngừng sử dụng và xóa tài khoản.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" id="contact" />
+
+  <!-- 6. Liên hệ -->
+  <div class="section">
+    <h2>
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </span>
+      6. Liên hệ hỗ trợ
+    </h2>
+    <p class="subtitle">Mọi thắc mắc vui lòng liên hệ qua các kênh sau</p>
+
+    <div class="two-col">
+      <div class="card" style="text-align:center;">
+        <h3 style="justify-content:center;">Email</h3>
+        <p style="margin-top:8px;">
+          <a href="mailto:phongdevinfo@gmail.com" style="font-size:14px;">phongdevinfo@gmail.com</a>
+        </p>
+        <p style="font-size:12px; color: var(--muted); margin-top:4px;">Phản hồi trong 24 giờ</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <h3 style="justify-content:center;">Điện thoại</h3>
+        <p style="margin-top:8px;">
+          <a href="tel:0347916302" style="font-size:14px;">0347 916 302</a>
+        </p>
+        <p style="font-size:12px; color: var(--muted); margin-top:4px;">Thứ 2 - Thứ 6, 9h - 18h</p>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:16px;">
+      <p>
+        <strong>Hỗ trợ khẩn cấp:</strong> Nếu bạn phát hiện hành vi lừa đảo, xâm phạm quyền riêng tư
+        hoặc bất kỳ vấn đề bảo mật nào, vui lòng báo cáo ngay qua email với tiêu đề
+        <em>"Bảo mật khẩn cấp - Zentio"</em>.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 7. Luật áp dụng -->
+  <div class="section">
+    <h2>
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      </span>
+      7. Luật áp dụng &amp; giải quyết tranh chấp
+    </h2>
+    <p class="subtitle">Pháp luật Việt Nam chi phối toàn bộ điều khoản này</p>
+
+    <div class="card">
+      <p>
+        Điều khoản sử dụng và Chính sách bảo mật này được điều chỉnh và giải thích theo pháp luật
+        nước Cộng hòa Xã hội Chủ nghĩa Việt Nam. Mọi tranh chấp phát sinh từ hoặc liên quan đến việc
+        sử dụng ứng dụng Zentio sẽ được giải quyết trước tiên bằng thương lượng, hòa giải.
+      </p>
+      <p style="margin-top:10px;">
+        Nếu không thể giải quyết bằng thương lượng trong vòng 30 ngày, tranh chấp sẽ được đưa
+        ra Tòa án nhân dân có thẩm quyền tại Việt Nam.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">ZENTIO</div>
+  <p>&copy; 2026 Zentio. Tất cả các quyền được bảo lưu.</p>
+  <p style="margin-top:6px;">
+    <a href="index.html">Quay lại trang chủ</a>
+  </p>
+</footer>
+
+</body>
+</html>
