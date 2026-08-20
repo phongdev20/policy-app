@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Điều khoản & Chính sách - Zentio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #D9C5B2;
+      --secondary: #E8B4B8;
+      --tertiary: #6B5B52;
+      --neutral: #FAF9F6;
+      --text-primary: #6B5B52;
+      --text-secondary: #999999;
+      --bg-primary: #FCFAF7;
+      --bg-secondary: #F5F5F5;
+      --border: #E0E0E0;
+      --rose: #E8B4B8;
+      --cream: #F5EDE6;
+      --shadow: rgba(107, 91, 82, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--tertiary);
+      letter-spacing: 0.02em;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .header-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .header-nav a:hover,
+    .header-nav a.active {
+      color: var(--tertiary);
+    }
+
+    .header-nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--secondary);
+      border-radius: 2px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 8rem 1.5rem 4rem;
+      text-align: center;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--bg-primary) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, var(--secondary) 0%, transparent 60%);
+      opacity: 0.05;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 600;
+      color: var(--tertiary);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      position: sticky;
+      top: 73px;
+      z-index: 90;
+      background: var(--neutral);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+
+    .nav-tabs-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-tabs-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-tab {
+      padding: 1rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .nav-tab:hover {
+      color: var(--tertiary);
+    }
+
+    .nav-tab.active {
+      color: var(--tertiary);
+      border-bottom-color: var(--secondary);
+    }
+
+    /* Main Content */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 140px;
+      height: fit-content;
+    }
+
+    .sidebar-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .sidebar-link:hover {
+      background: var(--cream);
+      color: var(--tertiary);
+    }
+
+    .sidebar-link.active {
+      background: var(--cream);
+      color: var(--tertiary);
+      font-weight: 500;
+    }
+
+    .sidebar-link svg {
+      width: 18px;
+      height: 18px;
+      opacity: 0.7;
+    }
+
+    /* Content Sections */
+    .content {
+      min-width: 0;
+    }
+
+    .content section {
+      margin-bottom: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 160px;
+    }
+
+    .content section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.875rem;
+      font-style: italic;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--tertiary);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .content p {
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+    }
+
+    .content ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .content li {
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    .content li::marker {
+      color: var(--secondary);
+    }
+
+    .content strong {
+      color: var(--tertiary);
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, var(--cream) 0%, var(--neutral) 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+
+    /* Info Cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .info-card {
+      background: var(--neutral);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .info-card-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .info-card-icon svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .info-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.125rem;
+      color: var(--tertiary);
+      margin-bottom: 0.5rem;
+    }
+
+    .info-card p {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+    }
+
+    /* Table */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--neutral);
+    }
+
+    th {
+      text-align: left;
+      padding: 1rem 1.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: var(--bg-primary);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--tertiary);
+      color: var(--neutral);
+      padding: 4rem 1.5rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand .logo {
+      color: var(--neutral);
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.9375rem;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+
+    .footer-column h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      opacity: 0.6;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--neutral);
+      text-decoration: none;
+      font-size: 0.9375rem;
+      padding: 0.375rem 0;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      font-size: 0.875rem;
+      opacity: 0.6;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .footer-social a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .footer-social svg {
+      width: 20px;
+      height: 20px;
+      color: var(--neutral);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-nav {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding: 7rem 1.5rem 3rem;
+      }
+
+      .nav-tabs {
+        top: 65px;
+      }
+
+      .main {
+        padding: 2rem 1rem 4rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* Scroll Progress */
+    .progress-bar {
+      position: fixed;
+      top: 73px;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      z-index: 99;
+      transition: width 0.1s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progress"></div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">Zentio</a>
+      <nav class="header-nav">
+        <a href="#dieu-khoan">Điều khoản</a>
+        <a href="#chinh-sach">Chính sách</a>
+        <a href="#huong-dan">Hướng dẫn</a>
+        <a href="#lien-he">Liên hệ</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Zentio Makeup Partner</p>
+      <h1>Điều khoản & Chính sách</h1>
+      <p>Cập nhật lần cuối: Tháng 8, 2026. Giúp bạn hiểu rõ quyền lợi và trách nhiệm khi sử dụng nền tảng của chúng tôi.</p>
+    </div>
+  </section>
+
+  <nav class="nav-tabs">
+    <div class="nav-tabs-inner">
+      <a href="#dieu-khoan" class="nav-tab active">Điều khoản sử dụng</a>
+      <a href="#chinh-sach" class="nav-tab">Chính sách bảo mật</a>
+      <a href="#chinh-sach-thanh-toan" class="nav-tab">Chính sách thanh toán</a>
+      <a href="#quyen-so-huu" class="nav-tab">Quyền sở hữu trí tuệ</a>
+      <a href="#giai-quyet" class="nav-tab">Giải quyết tranh chấp</a>
+    </div>
+  </nav>
+
+  <main class="main">
+    <aside class="sidebar">
+      <p class="sidebar-title">Nội dung</p>
+      <nav class="sidebar-nav">
+        <a href="#dieu-khoan" class="sidebar-link active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Điều khoản sử dụng
+        </a>
+        <a href="#chinh-sach" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Chính sách bảo mật
+        </a>
+        <a href="#chinh-sach-thanh-toan" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          Chính sách thanh toán
+        </a>
+        <a href="#quyen-so-huu" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          Quyền sở hữu trí tuệ
+        </a>
+        <a href="#giai-quyet" class="sidebar-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Giải quyết tranh chấp
+        </a>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <!-- Điều khoản sử dụng -->
+      <section id="dieu-khoan">
+        <div class="section-header">
+          <p class="section-number">01</p>
+          <h2 class="section-title">Điều khoản sử dụng</h2>
+          <p class="section-subtitle">Quy định về việc sử dụng nền tảng Zentio</p>
+        </div>
+
+        <p>Chào mừng bạn đến với Zentio - nền tảng kết nối chuyên gia trang điểm với khách hàng. Bằng việc truy cập và sử dụng ứng dụng Zentio, bạn đồng ý tuân thủ các điều khoản và điều kiện được nêu dưới đây.</p>
+
+        <h3>1.1. Chấp nhận điều khoản</h3>
+        <p>Khi đăng ký tài khoản và sử dụng dịch vụ của Zentio, bạn xác nhận rằng bạn đã đọc, hiểu và đồng ý bị ràng buộc bởi các Điều khoản sử dụng này. Nếu bạn không đồng ý với bất kỳ phần nào của Điều khoản, vui lòng không sử dụng dịch vụ của chúng tôi.</p>
+
+        <h3>1.2. Đối tượng sử dụng</h3>
+        <p>Zentio dành cho:</p>
+        <ul>
+          <li><strong>Khách hàng:</strong> Người tìm kiếm và đặt lịch dịch vụ trang điểm với các chuyên gia trên nền tảng.</li>
+          <li><strong>Chuyên gia (Artist/MUA):</strong> Người cung cấp dịch vụ trang điểm chuyên nghiệp và quản lý lịch hẹn.</li>
+          <li><strong>Người mẫu (Model):</strong> Người tham gia các dự án trang điểm và chia sẻ portfolio.</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong>Lưu ý:</strong> Bạn phải từ 18 tuổi trở lên để tạo tài khoản và sử dụng dịch vụ của Zentio. Nếu bạn dưới 18 tuổi, vui lòng sử dụng dịch vụ dưới sự giám sát của cha mẹ hoặc người giám hộ hợp pháp.</p>
+        </div>
+
+        <h3>1.3. Tài khoản người dùng</h3>
+        <p>Để sử dụng đầy đủ tính năng của Zentio, bạn cần đăng ký tài khoản với thông tin chính xác và cập nhật. Bạn chịu trách nhiệm:</p>
+        <ul>
+          <li>Bảo mật thông tin đăng nhập của mình</li>
+          <li>Thông báo ngay cho chúng tôi nếu phát hiện truy cập trái phép</li>
+          <li>Chịu mọi hoạt động diễn ra dưới tài khoản của bạn</li>
+        </ul>
+
+        <h3>1.4. Nghĩa vụ của người dùng</h3>
+        <p>Khi sử dụng Zentio, bạn cam kết:</p>
+        <ul>
+          <li>Không sử dụng dịch vụ cho mục đích bất hợp pháp hoặc vi phạm pháp luật</li>
+          <li>Không xâm phạm quyền riêng tư hoặc tài sản trí tuệ của người khác</li>
+          <li>Không can thiệp hoặc phá hoại hệ thống của Zentio</li>
+          <li>Cung cấp thông tin chính xác khi đặt lịch hoặc cung cấp dịch vụ</li>
+          <li>Tôn trọng các chuyên gia và khách hàng khác trên nền tảng</li>
+        </ul>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h4>Cam kết chất lượng</h4>
+            <p>Chuyên gia được kiểm duyệt trước khi tham gia nền tảng</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h4>Bảo mật dữ liệu</h4>
+            <p>Thông tin cá nhân được mã hóa và bảo vệ theo tiêu chuẩn quốc tế</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h4>Hỗ trợ 24/7</h4>
+            <p>Đội ngũ hỗ trợ luôn sẵn sàng giải đáp thắc mắc</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chính sách bảo mật -->
+      <section id="chinh-sach">
+        <div class="section-header">
+          <p class="section-number">02</p>
+          <h2 class="section-title">Chính sách bảo mật</h2>
+          <p class="section-subtitle">Cách chúng tôi thu thập, sử dụng và bảo vệ dữ liệu của bạn</p>
+        </div>
+
+        <p>Zentio cam kết bảo vệ quyền riêng tư của bạn. Chính sách bảo mật này giải thích cách chúng tôi thu thập, sử dụng, tiết lộ và bảo vệ thông tin cá nhân của bạn.</p>
+
+        <h3>2.1. Thông tin chúng tôi thu thập</h3>
+        <p>Chúng tôi thu thập các loại thông tin sau:</p>
+        <ul>
+          <li><strong>Thông tin đăng ký:</strong> Tên, số điện thoại, email, mật khẩu (đã mã hóa)</li>
+          <li><strong>Thông tin hồ sơ:</strong> Ảnh đại diện, sinh nhật, địa chỉ, thông tin chuyên môn (đối với chuyên gia)</li>
+          <li><strong>Thông tin giao dịch:</strong> Lịch sử đặt lịch, thanh toán, đánh giá</li>
+          <li><strong>Dữ liệu sử dụng:</strong> Thiết bị truy cập, địa chỉ IP, cookies, hoạt động trên ứng dụng</li>
+        </ul>
+
+        <h3>2.2. Mục đích sử dụng dữ liệu</h3>
+        <p>Thông tin của bạn được sử dụng để:</p>
+        <ul>
+          <li>Cung cấp và duy trì dịch vụ trên nền tảng Zentio</li>
+          <li>Kết nối bạn với chuyên gia hoặc khách hàng phù hợp</li>
+          <li>Xử lý thanh toán và gửi thông báo liên quan đến lịch hẹn</li>
+          <li>Cải thiện trải nghiệm người dùng và phát triển sản phẩm</li>
+          <li>Tuân thủ nghĩa vụ pháp lý và bảo vệ quyền lợi của Zentio</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong>Quyền của bạn:</strong> Bạn có quyền truy cập, chỉnh sửa, xóa hoặc yêu cầu chúng tôi ngừng xử lý dữ liệu cá nhân của bạn. Để thực hiện quyền này, vui lòng liên hệ với chúng tôi qua mục Liên hệ bên dưới.</p>
+        </div>
+
+        <h3>2.3. Chia sẻ thông tin</h3>
+        <p>Chúng tôi không bán thông tin cá nhân của bạn cho bên thứ ba. Thông tin chỉ được chia sẻ trong các trường hợp:</p>
+        <ul>
+          <li>Với sự đồng ý rõ ràng của bạn</li>
+          <li>Để hoàn tất giao dịch (ví dụ: chia sẻ địa chỉ với chuyên gia khi đặt lịch)</li>
+          <li>Theo yêu cầu của cơ quan có thẩm quyền hoặc pháp luật</li>
+        </ul>
+
+        <h3>2.4. Bảo mật dữ liệu</h3>
+        <p>Chúng tôi áp dụng các biện pháp bảo mật sau:</p>
+        <ul>
+          <li>Mã hóa dữ liệu trong quá trình truyền tải (SSL/TLS) và lưu trữ</li>
+          <li>Xác thực hai yếu tố (2FA) cho đăng nhập</li>
+          <li>Giám sát và phát hiện xâm nhập 24/7</li>
+          <li>Đào tạo nhân viên về bảo mật thông tin</li>
+        </ul>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Loại dữ liệu</th>
+                <th>Thời gian lưu trữ</th>
+                <th>Cách xóa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Thông tin tài khoản</td>
+                <td>Cho đến khi yêu cầu xóa</td>
+                <td>Xóa vĩnh viễn sau 30 ngày</td>
+              </tr>
+              <tr>
+                <td>Lịch sử giao dịch</td>
+                <td>5 năm (theo quy định)</td>
+                <td>Lưu trữ ẩn danh</td>
+              </tr>
+              <tr>
+                <td>Cookies</td>
+                <td>13 tháng</td>
+                <td>Tự động xóa</td>
+              </tr>
+              <tr>
+                <td>Nhật ký hệ thống</td>
+                <td>90 ngày</td>
+                <td>Xóa tự động</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Chính sách thanh toán -->
+      <section id="chinh-sach-thanh-toan">
+        <div class="section-header">
+          <p class="section-number">03</p>
+          <h2 class="section-title">Chính sách thanh toán</h2>
+          <p class="section-subtitle">Hướng dẫn về giá cả, thanh toán và hoàn tiền</p>
+        </div>
+
+        <h3>3.1. Giá dịch vụ</h3>
+        <p>Giá dịch vụ trên Zentio được quyết định bởi từng chuyên gia và sẽ được hiển thị rõ ràng trước khi bạn xác nhận đặt lịch. Zentio không áp dụng phí markup trên giá dịch vụ.</p>
+
+        <h3>3.2. Phương thức thanh toán</h3>
+        <p>Chúng tôi hỗ trợ các phương thức thanh toán sau:</p>
+        <ul>
+          <li><strong>Ví điện tử:</strong> MoMo, ZaloPay, VNPay</li>
+          <li><strong>Thẻ:</strong> Thẻ ATM nội địa, Thẻ tín dụng/ghi nợ quốc tế (Visa, Mastercard)</li>
+          <li><strong>Tiền mặt:</strong> Thanh toán trực tiếp với chuyên gia (theo thỏa thuận riêng)</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong>Phí nền tảng:</strong> Zentio thu phí 15% trên mỗi giao dịch thành công từ chuyên gia. Khách hàng không phải trả phí sử dụng nền tảng.</p>
+        </div>
+
+        <h3>3.3. Chính sách hoàn tiền</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Tình huống</th>
+                <th>Hoàn tiền</th>
+                <th>Thời gian xử lý</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chuyên gia hủy lịch</td>
+                <td>100%</td>
+                <td>3-5 ngày làm việc</td>
+              </tr>
+              <tr>
+                <td>Khách hủy trước 24h</td>
+                <td>100%</td>
+                <td>3-5 ngày làm việc</td>
+              </tr>
+              <tr>
+                <td>Khách hủy trong 24h</td>
+                <td>50%</td>
+                <td>3-5 ngày làm việc</td>
+              </tr>
+              <tr>
+                <td>Dịch vụ không đúng mô tả</td>
+                <td>100% (sau xác minh)</td>
+                <td>5-7 ngày làm việc</td>
+              </tr>
+              <tr>
+                <td>Không phù hợp để hoàn tiền</td>
+                <td>0%</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>3.4. Thanh toán cho chuyên gia</h3>
+        <p>Chuyên gia nhận thanh toán theo cơ chế:</p>
+        <ul>
+          <li>Thanh toán được giải ngân sau khi dịch vụ hoàn thành và không có khiếu nại trong vòng 48 giờ</li>
+          <li>Thời gian chuyển khoản: T+2 ngày làm việc (T là ngày giải ngân)</li>
+          <li>Phương thức: Chuyển khoản ngân hàng nội địa</li>
+        </ul>
+      </section>
+
+      <!-- Quyền sở hữu trí tuệ -->
+      <section id="quyen-so-huu">
+        <div class="section-header">
+          <p class="section-number">04</p>
+          <h2 class="section-title">Quyền sở hữu trí tuệ</h2>
+          <p class="section-subtitle">Bản quyền đối với nội dung trên nền tảng</p>
+        </div>
+
+        <h3>4.1. Sở hữu của Zentio</h3>
+        <p>Tất cả nội dung trên nền tảng Zentio, bao gồm nhưng không giới hạn ở logo, thiết kế, giao diện, mã nguồn, văn bản, hình ảnh, đồ họa, âm thanh, video, và tên thương hiệu "Zentio" đều thuộc quyền sở hữu của Zentio hoặc được cấp phép hợp lệ. Bạn không được phép sao chép, sửa đổi, phân phối hoặc sử dụng cho mục đích thương mại khi chưa có sự đồng ý bằng văn bản của chúng tôi.</p>
+
+        <h3>4.2. Sở hữu của người dùng</h3>
+        <p>Bạn giữ quyền sở hữu đối với:</p>
+        <ul>
+          <li>Hình ảnh và nội dung bạn tải lên (portfolio, ảnh đại diện)</li>
+          <li>Đánh giá và nhận xét bạn đăng tải</li>
+          <li>Thông tin cá nhân trong tài khoản của bạn</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong>Cấp phép nội dung:</strong> Khi đăng tải nội dung lên Zentio, bạn cấp cho chúng tôi quyền sử dụng, sao chép, hiển thị và phân phối nội dung đó nhằm mục đích cung cấp và quảng bá dịch vụ. Quyền này có thể bị thu hồi bất kỳ lúc nào bằng cách xóa nội dung khỏi nền tảng.</p>
+        </div>
+
+        <h3>4.3. Nội dung của chuyên gia</h3>
+        <p>Đối với chuyên gia trang điểm:</p>
+        <ul>
+          <li>Portfolio và hình ảnh minh họa dịch vụ phải là công trình sáng tạo của bạn hoặc bạn phải có quyền sử dụng hợp pháp</li>
+          <li>Bạn không được phép sử dụng hình ảnh của người mẫu mà không có sự đồng ý của họ</li>
+          <li>Zentio có quyền gỡ bỏ nội dung vi phạm quyền sở hữu trí tuệ mà không cần thông báo trước</li>
+        </ul>
+      </section>
+
+      <!-- Giải quyết tranh chấp -->
+      <section id="giai-quyet">
+        <div class="section-header">
+          <p class="section-number">05</p>
+          <h2 class="section-title">Giải quyết tranh chấp</h2>
+          <p class="section-subtitle">Cách xử lý khiếu nại và tranh chấp</p>
+        </div>
+
+        <h3>5.1. Khiếu nại dịch vụ</h3>
+        <p>Nếu bạn không hài lòng với dịch vụ đã đặt, vui lòng:</p>
+        <ul>
+          <li>Liên hệ trực tiếp với chuyên gia để giải quyết trong vòng 24 giờ</li>
+          <li>Nếu không đạt được thỏa thuận, gửi khiếu nại qua ứng dụng Zentio</li>
+          <li>Cung cấp bằng chứng (ảnh, mô tả chi tiết) để hỗ trợ khiếu nại</li>
+        </ul>
+
+        <h3>5.2. Quy trình giải quyết</h3>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h4>Bước 1: Tiếp nhận</h4>
+            <p>Khiếu nại được ghi nhận trong vòng 24 giờ làm việc</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <h4>Bước 2: Xác minh</h4>
+            <p>Đội ngũ Zentio xác minh thông tin và thu thập ý kiến các bên</p>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h4>Bước 3: Kết luận</h4>
+            <p>Đưa ra quyết định và thông báo cho các bên trong 5-7 ngày</p>
+          </div>
+        </div>
+
+        <h3>5.3. Tranh chấp pháp lý</h3>
+        <p>Các điều khoản sử dụng này được điều chỉnh theo pháp luật Việt Nam. Mọi tranh chấp phát sinh từ việc sử dụng dịch vụ của Zentio mà không thể giải quyết bằng thương lượng sẽ được giải quyết tại Tòa án nhân dân có thẩm quyền tại Thành phố Hồ Chí Minh, Việt Nam.</p>
+
+        <h3>5.4. Liên hệ hỗ trợ</h3>
+        <p>Nếu bạn có câu hỏi hoặc cần hỗ trợ về các điều khoản này, vui lòng liên hệ:</p>
+        <ul>
+          <li><strong>Email:</strong> support@zentio.vn</li>
+          <li><strong>Hotline:</strong> 1900 1234 (8:00 - 20:00, Thứ 2 - Thứ 7)</li>
+          <li><strong>Chat:</strong> Trong ứng dụng Zentio</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" id="lien-he">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">Zentio</div>
+          <p>Nền tảng kết nối chuyên gia trang điểm với khách hàng, mang đến trải nghiệm làm đẹp chuyên nghiệp và thuận tiện nhất.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Về Zentio</h4>
+          <a href="#">Giới thiệu</a>
+          <a href="#">Tuyển dụng</a>
+          <a href="#">Blog</a>
+          <a href="#">Báo chí</a>
+        </div>
+        <div class="footer-column">
+          <h4>Hỗ trợ</h4>
+          <a href="#">Trung tâm trợ giúp</a>
+          <a href="#">Câu hỏi thường gặp</a>
+          <a href="#">Liên hệ</a>
+          <a href="#">Báo cáo sự cố</a>
+        </div>
+        <div class="footer-column">
+          <h4>Pháp lý</h4>
+          <a href="#">Điều khoản sử dụng</a>
+          <a href="#">Chính sách bảo mật</a>
+          <a href="#">Chính sách cookies</a>
+          <a href="#">Giải quyết khiếu nại</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Zentio. Tất cả quyền được bảo lưu.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress').style.width = scrolled + '%';
+    });
+
+    // Active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-tab, .sidebar-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
