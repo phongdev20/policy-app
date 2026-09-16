@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0F172A">
+    <title>Điều khoản & Chính sách - StreamMix</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #334155;
+            --accent: #38BDF8;
+            --accent-dark: #0EA5E9;
+            --text-primary: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --text-muted: #94A3B8;
+            --border: #475569;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            padding: 40px 24px 32px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 16px;
+            background: var(--accent);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+        }
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .header .subtitle {
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .last-updated {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 6px 14px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent);
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* ========== MAIN CONTAINER ========== */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 20px 80px;
+        }
+
+        /* ========== TABLE OF CONTENTS ========== */
+        .toc {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 32px;
+        }
+
+        .toc-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent);
+            margin-bottom: 14px;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+        }
+
+        .toc li {
+            counter-increment: toc-counter;
+            margin-bottom: 8px;
+        }
+
+        .toc li:last-child {
+            margin-bottom: 0;
+        }
+
+        .toc a {
+            display: flex;
+            align-items: center;
+            padding: 10px 14px;
+            background: var(--bg-primary);
+            border: 1px solid transparent;
+            border-radius: 10px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .toc a::before {
+            content: counter(toc-counter);
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            background: var(--bg-card);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .toc a:active,
+        .toc a:hover {
+            background: var(--bg-card);
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        /* ========== SECTIONS ========== */
+        section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin-bottom: 20px;
+            scroll-margin-top: 20px;
+        }
+
+        section h2 {
+            font-size: 19px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg-card);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section h2 .icon {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        section h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 18px 0 10px;
+        }
+
+        section p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        section ul, section ol {
+            margin: 8px 0 14px 22px;
+            color: var(--text-secondary);
+            font-size: 14.5px;
+        }
+
+        section li {
+            margin-bottom: 6px;
+        }
+
+        section strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        /* ========== HIGHLIGHT BOX ========== */
+        .highlight {
+            background: rgba(56, 189, 248, 0.08);
+            border-left: 4px solid var(--accent);
+            padding: 14px 16px;
+            border-radius: 8px;
+            margin: 14px 0;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .highlight.warning {
+            background: rgba(245, 158, 11, 0.08);
+            border-left-color: var(--warning);
+        }
+
+        .highlight.danger {
+            background: rgba(239, 68, 68, 0.08);
+            border-left-color: var(--danger);
+        }
+
+        .highlight.success {
+            background: rgba(16, 185, 129, 0.08);
+            border-left-color: var(--success);
+        }
+
+        /* ========== CONTACT CARD ========== */
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 14px;
+        }
+
+        .contact-card .row {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .contact-card .row .label {
+            min-width: 90px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-right: 12px;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 24px;
+            color: var(--text-muted);
+            font-size: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer .brand {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 480px) {
+            .header {
+                padding: 32px 20px 28px;
+            }
+            .header h1 {
+                font-size: 22px;
+            }
+            .container {
+                padding: 20px 16px 60px;
+            }
+            section {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="header">
+    <div class="logo">S</div>
+    <h1>Điều khoản & Chính sách</h1>
+    <div class="subtitle">StreamMix - Nền tảng Live Streaming</div>
+    <div class="last-updated">Cập nhật lần cuối: 16/09/2026</div>
+</header>
+
+<div class="container">
+
+    <!-- ========== TABLE OF CONTENTS ========== -->
+    <nav class="toc">
+        <div class="toc-title">Mục lục</div>
+        <ol>
+            <li><a href="#chinh-sach-quy-dinh-chung">Quy định chung của StreamMix</a></li>
+            <li><a href="#chinh-sach-bao-mat-thong-tin-ca-nhan">Bảo mật thông tin cá nhân</a></li>
+            <li><a href="#chinh-sach-bao-mat-thong-tin-thanh-toan">Bảo mật thông tin thanh toán</a></li>
+            <li><a href="#chinh-sach-hoan-tien-doi-tra">Chính sách hoàn tiền/đổi trả</a></li>
+            <li><a href="#chinh-sach-thanh-toan">Chính sách thanh toán</a></li>
+            <li><a href="#chinh-sach-ve-vat-pham-trong-ung-dung">Vật phẩm trong ứng dụng</a></li>
+            <li><a href="#quy-trinh-cung-ung-dich-vu">Quy trình cung ứng dịch vụ</a></li>
+            <li><a href="#dieu-khoan-su-dung">Điều khoản sử dụng</a></li>
+            <li><a href="#lien-he-ho-tro">Liên hệ hỗ trợ</a></li>
+        </ol>
+    </nav>
+
+    <!-- ========== 1. QUY ĐỊNH CHUNG ========== -->
+    <section id="chinh-sach-quy-dinh-chung">
+        <h2><span class="icon">1</span>Quy định chung của StreamMix</h2>
+        <p>Chào mừng bạn đến với <strong>StreamMix</strong> - ứng dụng live streaming kết hợp mua sắm và giải trí. Khi sử dụng dịch vụ của chúng tôi, bạn đồng ý tuân thủ các điều khoản và điều kiện được nêu dưới đây.</p>
+
+        <h3>1.1. Phạm vi áp dụng</h3>
+        <p>Các điều khoản này áp dụng cho tất cả người dùng (gọi chung là "Người dùng" hoặc "bạn") khi truy cập, đăng ký hoặc sử dụng ứng dụng StreamMix (gọi tắt là "Dịch vụ").</p>
+
+        <h3>1.2. Điều kiện sử dụng</h3>
+        <ul>
+            <li>Người dùng phải đủ <strong>18 tuổi trở lên</strong> hoặc có sự đồng ý của cha mẹ/người giám hộ hợp pháp.</li>
+            <li>Mỗi người chỉ được tạo <strong>một tài khoản cá nhân</strong>. Trường hợp tạo nhiều tài khoản, chúng tôi có quyền khóa tất cả tài khoản liên quan.</li>
+            <li>Thông tin đăng ký phải chính xác, đầy đủ và được cập nhật kịp thời.</li>
+            <li>Người dùng chịu trách nhiệm bảo mật mật khẩu và mọi hoạt động phát sinh từ tài khoản của mình.</li>
+        </ul>
+
+        <h3>1.3. Sửa đổi điều khoản</h3>
+        <p>StreamMix có quyền sửa đổi, bổ sung các điều khoản bất kỳ lúc nào. Phiên bản cập nhật sẽ được thông báo trong ứng dụng và có hiệu lực ngay khi đăng tải. Việc bạn tiếp tục sử dụng Dịch vụ đồng nghĩa với việc chấp thuận các điều khoản mới.</p>
+
+        <div class="highlight">
+            <strong>Lưu ý:</strong> Vui lòng đọc kỹ các điều khoản trước khi sử dụng. Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng ngừng sử dụng Dịch vụ.
+        </div>
+    </section>
+
+    <!-- ========== 2. BẢO MẬT THÔNG TIN CÁ NHÂN ========== -->
+    <section id="chinh-sach-bao-mat-thong-tin-ca-nhan">
+        <h2><span class="icon">2</span>Bảo mật thông tin cá nhân</h2>
+        <p>StreamMix cam kết bảo vệ thông tin cá nhân của người dùng theo các nguyên tắc sau:</p>
+
+        <h3>2.1. Thông tin chúng tôi thu thập</h3>
+        <ul>
+            <li><strong>Thông tin tài khoản:</strong> họ tên, email, số điện thoại, ngày sinh.</li>
+            <li><strong>Thông tin thiết bị:</strong> loại thiết bị, hệ điều hành, ngôn ngữ, quốc gia, địa chỉ IP.</li>
+            <li><strong>Thông tin sử dụng:</strong> lịch sử xem live, video yêu thích, tương tác với streamer.</li>
+            <li><strong>Thông tin thanh toán:</strong> được mã hóa và xử lý qua các cổng thanh toán uy tín.</li>
+        </ul>
+
+        <h3>2.2. Mục đích sử dụng</h3>
+        <ol>
+            <li>Cung cấp và vận hành các tính năng của Dịch vụ.</li>
+            <li>Cá nhân hóa trải nghiệm người dùng (gợi ý nội dung, ngôn ngữ, quốc gia).</li>
+            <li>Xử lý giao dịch thanh toán và hóa đơn.</li>
+            <li>Hỗ trợ khách hàng, xử lý khiếu nại và tranh chấp.</li>
+            <li>Gửi thông báo về cập nhật, khuyến mãi (khi được đồng ý).</li>
+            <li>Phát hiện và ngăn chặn gian lận, vi phạm chính sách.</li>
+        </ol>
+
+        <h3>2.3. Quyền của người dùng</h3>
+        <ul>
+            <li>Được <strong>truy cập, chỉnh sửa</strong> thông tin cá nhân bất kỳ lúc nào trong mục Hồ sơ.</li>
+            <li>Được <strong>yêu cầu xóa tài khoản</strong> và toàn bộ dữ liệu liên quan.</li>
+            <li>Được <strong>từ chối nhận</strong> email/tin nhắn quảng cáo.</li>
+            <li>Được <strong>khiếu nại</strong> về việc thu thập, sử dụng thông tin cá nhân.</li>
+        </ul>
+
+        <div class="highlight success">
+            <strong>Cam kết:</strong> Chúng tôi không bán, trao đổi thông tin cá nhân của bạn cho bên thứ ba vì mục đích thương mại.
+        </div>
+    </section>
+
+    <!-- ========== 3. BẢO MẬT THÔNG TIN THANH TOÁN ========== -->
+    <section id="chinh-sach-bao-mat-thong-tin-thanh-toan">
+        <h2><span class="icon">3</span>Bảo mật thông tin thanh toán</h2>
+        <p>Mọi giao dịch thanh toán trong StreamMix đều được xử lý qua các đối tác cổng thanh toán tuân thủ tiêu chuẩn <strong>PCI DSS</strong> quốc tế.</p>
+
+        <h3>3.1. Phương thức bảo mật</h3>
+        <ul>
+            <li>Mã hóa <strong>SSL/TLS 256-bit</strong> cho toàn bộ đường truyền.</li>
+            <li>Tuân thủ tiêu chuẩn <strong>3D Secure</strong> (OTP) cho thẻ tín dụng/ghi nợ.</li>
+            <li>Token hóa thông tin thẻ - StreamMix <strong>không lưu trữ</strong> số thẻ đầy đủ của bạn.</li>
+            <li>Hệ thống phát hiện gian lận tự động (anti-fraud AI).</li>
+        </ul>
+
+        <h3>3.2. Lưu trữ thông tin</h3>
+        <ul>
+            <li>Lịch sử giao dịch được lưu trữ tối thiểu <strong>5 năm</strong> theo quy định pháp luật.</li>
+            <li>Thông tin thẻ chỉ lưu dưới dạng mã token tại cổng thanh toán, không lưu trên server StreamMix.</li>
+            <li>Nhân viên StreamMix <strong>không có quyền</strong> xem số thẻ đầy đủ của bạn.</li>
+        </ul>
+
+        <div class="highlight warning">
+            <strong>Cảnh báo:</strong> StreamMix sẽ không bao giờ yêu cầu bạn cung cấp mật khẩu, mã OTP, hoặc số CVV qua điện thoại, email hay tin nhắn.
+        </div>
+    </section>
+
+    <!-- ========== 4. HOÀN TIỀN / ĐỔI TRẢ ========== -->
+    <section id="chinh-sach-hoan-tien-doi-tra">
+        <h2><span class="icon">4</span>Chính sách hoàn tiền / đổi trả</h2>
+
+        <h3>4.1. Nguyên tắc chung</h3>
+        <p>StreamMix hỗ trợ hoàn tiền trong các trường hợp được quy định rõ ràng dưới đây. Chính sách này nhằm bảo vệ quyền lợi chính đáng của người dùng và đảm bảo sự công bằng cho cộng đồng.</p>
+
+        <h3>4.2. Điều kiện hoàn tiền</h3>
+        <ul>
+            <li><strong>Lỗi kỹ thuật:</strong> giao dịch thành công nhưng dịch vụ không được cung cấp do lỗi hệ thống.</li>
+            <li><strong>Sai sót thanh toán:</strong> bị tính phí sai gói, sai số tiền do lỗi hệ thống.</li>
+            <li><strong>Tài khoản bị khóa nhầm:</strong> khi xác minh lại thấy không vi phạm chính sách.</li>
+            <li><strong>Gói dịch vụ chưa sử dụng:</strong> yêu cầu hoàn trong vòng <strong>24 giờ</strong> kể từ thời điểm thanh toán và chưa sử dụng bất kỳ quyền lợi nào.</li>
+        </ul>
+
+        <h3>4.3. Trường hợp KHÔNG hoàn tiền</h3>
+        <ul>
+            <li>Đã sử dụng một phần hoặc toàn bộ quyền lợi của gói dịch vụ.</li>
+            <li>Tài khoản bị khóa do vi phạm điều khoản sử dụng.</li>
+            <li>Yêu cầu hoàn tiền sau <strong>24 giờ</strong> kể từ thời điểm thanh toán.</li>
+            <li>Gói khuyến mãi, combo đặc biệt (trừ khi lỗi hệ thống).</li>
+            <li>Phần quà/vật phẩm ảo đã được sử dụng hoặc giao dịch.</li>
+        </ul>
+
+        <h3>4.4. Quy trình hoàn tiền</h3>
+        <ol>
+            <li>Liên hệ bộ phận hỗ trợ qua email hoặc trong ứng dụng.</li>
+            <li>Cung cấp: mã giao dịch, lý do, ảnh chụp màn hình (nếu có).</li>
+            <li>StreamMix xét duyệt trong vòng <strong>3-7 ngày làm việc</strong>.</li>
+            <li>Tiền được hoàn về phương thức thanh toán ban đầu trong vòng <strong>7-14 ngày</strong> tùy ngân hàng.</li>
+        </ol>
+
+        <div class="highlight">
+            Mọi khiếu nại về hoàn tiền vui lòng gửi về email <strong>phongdevinfo@gmail.com</strong> kèm mã giao dịch để được xử lý nhanh nhất.
+        </div>
+    </section>
+
+    <!-- ========== 5. CHÍNH SÁCH THANH TOÁN ========== -->
+    <section id="chinh-sach-thanh-toan">
+        <h2><span class="icon">5</span>Chính sách thanh toán</h2>
+
+        <h3>5.1. Các phương thức thanh toán được chấp nhận</h3>
+        <ul>
+            <li>Thẻ tín dụng / ghi nợ quốc tế (Visa, Mastercard, JCB).</li>
+            <li>Ví điện tử (Apple Pay, Google Pay).</li>
+            <li>Chuyển khoản ngân hàng nội địa.</li>
+            <li>Các cổng thanh toán trung gian được StreamMix ủy quyền.</li>
+        </ul>
+
+        <h3>5.2. Đơn vị tiền tệ</h3>
+        <p>Tất cả giao dịch trong ứng dụng hiển thị bằng <strong>USD</strong>. Khi thanh toán, đơn vị tiền tệ thực tế sẽ phụ thuộc vào phương thức và cổng thanh toán bạn chọn. Tỷ giá được áp dụng theo cổng thanh toán tại thời điểm giao dịch.</p>
+
+        <h3>5.3. Hóa đơn và chứng từ</h3>
+        <p>Sau mỗi giao dịch thành công, hóa đơn điện tử sẽ được gửi về email đăng ký. Bạn có thể tải lại hóa đơn trong mục <strong>Lịch sử giao dịch</strong> trong ứng dụng.</p>
+
+        <h3>5.4. Thanh toán không thành công</h3>
+        <p>Trong trường hợp thanh toán thất bại nhưng tài khoản vẫn bị trừ tiền, vui lòng liên hệ ngân hàng phát hành thẻ trước, sau đó cung cấp biên lai cho StreamMix để được hỗ trợ tra soát.</p>
+    </section>
+
+    <!-- ========== 6. VẬT PHẨM TRONG ỨNG DỤNG ========== -->
+    <section id="chinh-sach-ve-vat-pham-trong-ung-dung">
+        <h2><span class="icon">6</span>Vật phẩm trong ứng dụng</h2>
+
+        <h3>6.1. Loại vật phẩm ảo</h3>
+        <ul>
+            <li><strong>Xu / Coin:</strong> đơn vị tiền ảo trong ứng dụng, dùng để mua quà tặng, mở khóa nội dung premium.</li>
+            <li><strong>Quà tặng ảo:</strong> vật phẩm trang trí dùng để tặng cho streamer trong live stream.</li>
+            <li><strong>Badge / Huy hiệu:</strong> vật phẩm thể hiện cấp độ thành viên.</li>
+            <li><strong>Subscription / Gói thành viên:</strong> mở khóa tính năng premium theo thời hạn.</li>
+        </ul>
+
+        <h3>6.2. Quy tắc sử dụng</h3>
+        <ul>
+            <li>Vật phẩm ảo chỉ có giá trị sử dụng <strong>trong ứng dụng StreamMix</strong>, không có giá trị quy đổi thành tiền tệ thật.</li>
+            <li>Vật phẩm ảo <strong>không thể chuyển nhượng</strong> giữa các tài khoản khác nhau (trừ chương trình tặng quà hợp lệ).</li>
+            <li>Không hoàn trả vật phẩm đã sử dụng, đã tặng, hoặc đã giao dịch trên marketplace.</li>
+            <li>Vật phẩm có thời hạn sẽ tự động hết hạn theo thời gian quy định.</li>
+        </ul>
+
+        <h3>6.3. Marketplace</h3>
+        <p>Người dùng có thể mua bán vật phẩm ảo trên marketplace nội bộ. StreamMix thu phí sàn <strong>10%</strong> trên mỗi giao dịch thành công.</p>
+
+        <div class="highlight warning">
+            <strong>Lưu ý:</strong> Mọi hành vi gian lận, lợi dụng bug để tạo lợi thế trong marketplace sẽ bị xử lý theo chính sách, bao gồm khóa tài khoản vĩnh viễn mà không hoàn tiền.
+        </div>
+    </section>
+
+    <!-- ========== 7. QUY TRÌNH CUNG ỨNG DỊCH VỤ ========== -->
+    <section id="quy-trinh-cung-ung-dich-vu">
+        <h2><span class="icon">7</span>Quy trình cung ứng dịch vụ</h2>
+
+        <h3>7.1. Đăng ký tài khoản</h3>
+        <ol>
+            <li>Tải ứng dụng StreamMix từ App Store / Google Play.</li>
+            <li>Đăng ký bằng email, số điện thoại hoặc tài khoản mạng xã hội (Google, Facebook, Apple).</li>
+            <li>Xác minh email / số điện thoại qua OTP.</li>
+            <li>Hoàn tất hồ sơ cá nhân (tên hiển thị, ảnh đại diện).</li>
+        </ol>
+
+        <h3>7.2. Sử dụng dịch vụ</h3>
+        <p>Sau khi đăng ký, bạn có thể sử dụng ngay các tính năng miễn phí. Để mở khóa tính năng premium (xem live không quảng cáo, chất lượng cao, nội dung độc quyền), bạn cần đăng ký gói thành viên.</p>
+
+        <h3>7.3. Gia hạn và hủy</h3>
+        <ul>
+            <li>Gói thành viên tự động gia hạn trừ khi bạn hủy trước <strong>24 giờ</strong> kết thúc chu kỳ.</li>
+            <li>Bạn có thể hủy bất kỳ lúc nào trong mục Cài đặt &gt; Gói thành viên.</li>
+            <li>Sau khi hủy, quyền lợi vẫn được giữ đến hết chu kỳ đã thanh toán.</li>
+        </ul>
+
+        <h3>7.4. Chấm dứt dịch vụ</h3>
+        <p>StreamMix có quyền tạm ngưng hoặc chấm dứt tài khoản của bạn nếu:</p>
+        <ul>
+            <li>Vi phạm nghiêm trọng điều khoản sử dụng.</li>
+            <li>Có hành vi gian lận, lừa đảo.</li>
+            <li>Yêu cầu từ cơ quan pháp luật có thẩm quyền.</li>
+        </ul>
+    </section>
+
+    <!-- ========== 8. ĐIỀU KHOẢN SỬ DỤNG ========== -->
+    <section id="dieu-khoan-su-dung">
+        <h2><span class="icon">8</span>Điều khoản sử dụng</h2>
+
+        <h3>8.1. Hành vi bị cấm</h3>
+        <p>Người dùng <strong>không được</strong> thực hiện các hành vi sau:</p>
+        <ul>
+            <li>Phát tán nội dung vi phạm pháp luật, khiêu dâm, bạo lực, phân biệt chủng tộc, hoặc xúc phạm cá nhân/tổ chức.</li>
+            <li>Spam, quảng cáo trái phép, gửi tin nhắn rác hàng loạt.</li>
+            <li>Mạo danh người khác, tổ chức khác, hoặc nhân viên StreamMix.</li>
+            <li>Sử dụng tool, bot, script để can thiệp vào hệ thống.</li>
+            <li>Đăng tải nội dung có bản quyền mà không có sự cho phép.</li>
+            <li>Bán lại dịch vụ StreamMix khi chưa được ủy quyền.</li>
+            <li>Đăng ký nhiều tài khoản để trục lợi khuyến mãi.</li>
+        </ul>
+
+        <h3>8.2. Quyền của StreamMix</h3>
+        <ul>
+            <li>Gỡ bỏ nội dung vi phạm mà không cần thông báo trước.</li>
+            <li>Cảnh cáo, tạm khóa, hoặc khóa vĩnh viễn tài khoản vi phạm.</li>
+            <li>Từ chối cung cấp dịch vụ cho người dùng vi phạm.</li>
+            <li>Hợp tác với cơ quan chức năng khi có yêu cầu hợp pháp.</li>
+        </ul>
+
+        <h3>8.3. Giới hạn trách nhiệm</h3>
+        <div class="highlight warning">
+            StreamMix không chịu trách nhiệm về các thiệt hại gián tiếp, ngẫu nhiên, đặc biệt hoặc do hậu quả phát sinh từ việc sử dụng hoặc không thể sử dụng Dịch vụ, bao gồm nhưng không giới hạn ở mất dữ liệu, mất lợi nhuận, hoặc gián đoạn kinh doanh.
+        </div>
+
+        <h3>8.4. Luật áp dụng</h3>
+        <p>Các điều khoản này được điều chỉnh và giải thích theo pháp luật hiện hành. Mọi tranh chấp phát sinh sẽ được giải quyết tại Tòa án có thẩm quyền.</p>
+    </section>
+
+    <!-- ========== 9. LIÊN HỆ HỖ TRỢ ========== -->
+    <section id="lien-he-ho-tro">
+        <h2><span class="icon">9</span>Liên hệ hỗ trợ</h2>
+        <p>Nếu bạn có bất kỳ câu hỏi, thắc mắc hoặc khiếu nại nào về Điều khoản & Chính sách, vui lòng liên hệ với chúng tôi qua các kênh sau:</p>
+
+        <div class="contact-card">
+            <div class="row">
+                <span class="label">Email:</span>
+                <span>phongdevinfo@gmail.com</span>
+            </div>
+        </div>
+
+        <h3>Thời gian phản hồi</h3>
+        <ul>
+            <li>Email / form hỗ trợ: trong vòng <strong>24 giờ</strong> làm việc.</li>
+            <li>Hotline: <strong>8:00 - 22:00</strong> mỗi ngày (GMT+7).</li>
+            <li>Vấn đề khẩn cấp (khóa tài khoản, giao dịch lỗi): ưu tiên xử lý trong vòng <strong>2 giờ</strong>.</li>
+        </ul>
+
+        <div class="highlight success">
+            Cảm ơn bạn đã tin tưởng và sử dụng <strong>StreamMix</strong>. Chúng tôi cam kết mang đến trải nghiệm live streaming an toàn, lành mạnh và chất lượng cho cộng đồng.
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="brand">StreamMix</div>
+        <div>&copy; 2024 - 2026 StreamMix. All rights reserved.</div>
+        <div style="margin-top:8px; opacity:0.7;">Phiên bản tài liệu: 1.0.0</div>
+    </footer>
+
+</div>
+
+<script>
+    // Smooth scroll cho anchor links trong TOC
+    document.querySelectorAll('.toc a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
