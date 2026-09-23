@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0D3320">
+    <title>Điều khoản & Chính sách - SeedStep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0D3320;
+            --bg-secondary: #153526;
+            --bg-card: #1A4330;
+            --accent: #4ADE80;
+            --accent-dark: #22C55E;
+            --text-primary: #F0FDF4;
+            --text-secondary: #BBF7D0;
+            --text-muted: #86EFAC;
+            --border: #22543D;
+            --success: #4ADE80;
+            --warning: #FBBF24;
+            --danger: #F87171;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            padding: 40px 24px 32px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 16px;
+            background: linear-gradient(135deg, #22C55E, #16A34A);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(74, 222, 128, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '🌱';
+            font-size: 40px;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .header .subtitle {
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .tagline {
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .last-updated {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 6px 14px;
+            background: rgba(74, 222, 128, 0.15);
+            color: var(--accent);
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* ========== MAIN CONTAINER ========== */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 20px 80px;
+        }
+
+        /* ========== TABLE OF CONTENTS ========== */
+        .toc {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 32px;
+        }
+
+        .toc-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent);
+            margin-bottom: 14px;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+        }
+
+        .toc li {
+            counter-increment: toc-counter;
+            margin-bottom: 8px;
+        }
+
+        .toc li:last-child {
+            margin-bottom: 0;
+        }
+
+        .toc a {
+            display: flex;
+            align-items: center;
+            padding: 10px 14px;
+            background: var(--bg-primary);
+            border: 1px solid transparent;
+            border-radius: 10px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .toc a::before {
+            content: counter(toc-counter);
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            background: var(--bg-card);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .toc a:active,
+        .toc a:hover {
+            background: var(--bg-card);
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        /* ========== SECTIONS ========== */
+        section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin-bottom: 20px;
+            scroll-margin-top: 20px;
+        }
+
+        section h2 {
+            font-size: 19px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg-card);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section h2 .icon {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        section h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 18px 0 10px;
+        }
+
+        section p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        section ul, section ol {
+            margin: 8px 0 14px 22px;
+            color: var(--text-secondary);
+            font-size: 14.5px;
+        }
+
+        section li {
+            margin-bottom: 6px;
+        }
+
+        section strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        /* ========== HIGHLIGHT BOX ========== */
+        .highlight {
+            background: rgba(74, 222, 128, 0.08);
+            border-left: 4px solid var(--accent);
+            padding: 14px 16px;
+            border-radius: 8px;
+            margin: 14px 0;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .highlight.warning {
+            background: rgba(251, 191, 36, 0.08);
+            border-left-color: var(--warning);
+        }
+
+        .highlight.danger {
+            background: rgba(248, 113, 113, 0.08);
+            border-left-color: var(--danger);
+        }
+
+        .highlight.success {
+            background: rgba(74, 222, 128, 0.12);
+            border-left-color: var(--success);
+        }
+
+        /* ========== CONTACT CARD ========== */
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 14px;
+        }
+
+        .contact-card .row {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .contact-card .row .label {
+            min-width: 90px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-right: 12px;
+        }
+
+        /* ========== ACCORDION ========== */
+        .accordion {
+            margin-top: 16px;
+        }
+
+        .accordion-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+
+        .accordion-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 14px 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .accordion-header:hover {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
+        .accordion-header .arrow {
+            transition: transform 0.2s ease;
+        }
+
+        .accordion-item.active .accordion-header {
+            color: var(--accent);
+        }
+
+        .accordion-item.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+
+        .accordion-body {
+            padding: 0 16px 14px;
+            color: var(--text-secondary);
+            font-size: 13.5px;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 24px;
+            color: var(--text-muted);
+            font-size: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer .brand {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 480px) {
+            .header {
+                padding: 32px 20px 28px;
+            }
+            .header h1 {
+                font-size: 22px;
+            }
+            .container {
+                padding: 20px 16px 60px;
+            }
+            section {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="header">
+    <div class="logo"></div>
+    <h1>Điều khoản & Chính sách</h1>
+    <div class="subtitle">SeedStep - Nền tảng Gieo Trồng Số</div>
+    <div class="tagline">🌱 Mầm xanh giữa các vì sao</div>
+    <div class="last-updated">Cập nhật lần cuối: 23/09/2026</div>
+</header>
+
+<div class="container">
+
+    <!-- ========== TABLE OF CONTENTS ========== -->
+    <nav class="toc">
+        <div class="toc-title">Mục lục</div>
+        <ol>
+            <li><a href="#gioi-thieu">Giới thiệu về SeedStep</a></li>
+            <li><a href="#dieu-khoan-su-dung">Điều khoản sử dụng</a></li>
+            <li><a href="#tai-khoan-nguoi-dung">Tài khoản người dùng</a></li>
+            <li><a href="#chinh-sach-bao-mat">Chính sách bảo mật</a></li>
+            <li><a href="#thu-thap-du-lieu">Thu thập & sử dụng dữ liệu</a></li>
+            <li><a href="#quyen-nguoi-dung">Quyền của người dùng</a></li>
+            <li><a href="#thanh-toan">Thanh toán & hoàn tiền</a></li>
+            <li><a href="#hanh-vi-cam">Hành vi bị cấm</a></li>
+            <li><a href="#noi-dung-sinh-thai">Nội dung & cộng đồng</a></li>
+            <li><a href="#gioi-han-trach-nhiem">Giới hạn trách nhiệm</a></li>
+            <li><a href="#sua-doi">Sửa đổi điều khoản</a></li>
+            <li><a href="#lien-he">Liên hệ hỗ trợ</a></li>
+        </ol>
+    </nav>
+
+    <!-- ========== 1. GIỚI THIỆU ========== -->
+    <section id="gioi-thieu">
+        <h2><span class="icon">🌱</span>Giới thiệu về SeedStep</h2>
+        <p>Chào mừng bạn đến với <strong>SeedStep</strong> - nền tảng gieo trồng số, nơi mỗi hạt giống đều có thể trở thành cây xanh. Khi sử dụng ứng dụng và dịch vụ của chúng tôi, bạn đồng ý tuân thủ các điều khoản và chính sách được nêu trong tài liệu này.</p>
+
+        <h3>1.1. Về SeedStep</h3>
+        <p>SeedStep là nền tảng kết hợp giữa giáo dục, giải trí và tình nguyện, giúp người dùng:</p>
+        <ul>
+            <li>Khám phá và gieo trồng cây xanh trong thế giới số.</li>
+            <li>Tham gia các thử thách bảo vệ môi trường.</li>
+            <li>Kết nối với cộng đồng yêu thiên nhiên trên toàn thế giới.</li>
+            <li>Tích lũy điểm thưởng và đóng góp cho các dự án trồng cây thực tế.</li>
+        </ul>
+
+        <h3>1.2. Phạm vi áp dụng</h3>
+        <p>Các điều khoản này áp dụng cho tất cả người dùng (gọi chung là "Người dùng" hoặc "bạn") khi truy cập, đăng ký, hoặc sử dụng ứng dụng SeedStep trên mọi nền tảng (iOS, Android, Web).</p>
+
+        <div class="highlight">
+            <strong>Lưu ý quan trọng:</strong> Bằng việc sử dụng SeedStep, bạn xác nhận rằng đã đọc, hiểu và đồng ý với toàn bộ các điều khoản trong tài liệu này. Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng ngừng sử dụng dịch vụ.
+        </div>
+    </section>
+
+    <!-- ========== 2. ĐIỀU KHOẢN SỬ DỤNG ========== -->
+    <section id="dieu-khoan-su-dung">
+        <h2><span class="icon">📜</span>Điều khoản sử dụng</h2>
+        
+        <h3>2.1. Điều kiện sử dụng</h3>
+        <p>Để sử dụng SeedStep, bạn cần đáp ứng các điều kiện sau:</p>
+        <ul>
+            <li>Đủ <strong>13 tuổi trở lên</strong> đối với người dùng khu vực châu Âu, hoặc <strong>16 tuổi trở lên</strong> đối với các khu vực khác.</li>
+            <li>Đủ <strong>18 tuổi</strong> để sử dụng các tính năng thanh toán và mua hàng trong ứng dụng.</li>
+            <li>Người dùng dưới 18 tuổi cần có sự đồng ý của cha mẹ hoặc người giám hộ hợp pháp.</li>
+            <li>Không có lịch sử bị khóa tài khoản hoặc cấm sử dụng dịch vụ trước đó.</li>
+        </ul>
+
+        <h3>2.2. Giấy phép sử dụng</h3>
+        <p>SeedStep cấp cho bạn một giấy phép có giới hạn, không độc quyền, có thể thu hồi và không chuyển nhượng để:</p>
+        <ul>
+            <li>Truy cập và sử dụng ứng dụng theo đúng mục đích thiết kế.</li>
+            <li>Tải về và cài đặt bản sao ứng dụng trên thiết bị bạn sở hữu hoặc kiểm soát.</li>
+            <li>Sử dụng các tính năng được SeedStep cho phép.</li>
+        </ul>
+
+        <div class="highlight warning">
+            <strong>Cảnh báo:</strong> Giấy phép này không cho phép bạn sử dụng SeedStep cho bất kỳ mục đích thương mại nào khi chưa được sự đồng ý bằng văn bản từ chúng tôi.
+        </div>
+    </section>
+
+    <!-- ========== 3. TÀI KHOẢN NGƯỜI DÙNG ========== -->
+    <section id="tai-khoan-nguoi-dung">
+        <h2><span class="icon">👤</span>Tài khoản người dùng</h2>
+
+        <h3>3.1. Đăng ký tài khoản</h3>
+        <p>Bạn có thể đăng ký SeedStep thông qua:</p>
+        <ul>
+            <li>Email và mật khẩu.</li>
+            <li>Tài khoản mạng xã hội (Google, Apple, Facebook).</li>
+            <li>Đăng nhập một lần (SSO) cho tài khoản doanh nghiệp.</li>
+        </ul>
+
+        <h3>3.2. Thông tin tài khoản</h3>
+        <p>Khi đăng ký, bạn cần cung cấp thông tin chính xác và cập nhật:</p>
+        <ul>
+            <li><strong>Bắt buộc:</strong> Email, tên hiển thị, ngày sinh, quốc gia.</li>
+            <li><strong>Tùy chọn:</strong> Ảnh đại diện, giới thiệu cá nhân, sở thích.</li>
+            <li><strong>Bảo mật:</strong> Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường và số.</li>
+        </ul>
+
+        <h3>3.3. Quy tắc tài khoản</h3>
+        <ul>
+            <li>Mỗi người chỉ được tạo <strong>một tài khoản cá nhân</strong>. Tài khoản trùng lặp sẽ bị hợp nhất hoặc khóa.</li>
+            <li>Bạn chịu trách nhiệm bảo mật thông tin đăng nhập và mọi hoạt động trên tài khoản.</li>
+            <li>Không chia sẻ, cho mượn hoặc chuyển nhượng tài khoản cho người khác.</li>
+            <li>Tài khoản không hoạt động trong <strong>24 tháng</strong> có thể bị xóa vĩnh viễn.</li>
+        </ul>
+
+        <h3>3.4. Bảo mật tài khoản</h3>
+        <p>SeedStep khuyến khích bạn:</p>
+        <ul>
+            <li>Kích hoạt xác thực hai yếu tố (2FA).</li>
+            <li>Đăng xuất khi sử dụng thiết bị công cộng.</li>
+            <li>Thông báo ngay cho chúng tôi nếu phát hiện truy cập trái phép.</li>
+        </ul>
+    </section>
+
+    <!-- ========== 4. CHÍNH SÁCH BẢO MẬT ========== -->
+    <section id="chinh-sach-bao-mat">
+        <h2><span class="icon">🔒</span>Chính sách bảo mật</h2>
+
+        <h3>4.1. Cam kết bảo mật</h3>
+        <p>SeedStep cam kết bảo vệ thông tin cá nhân của người dùng theo các nguyên tắc:</p>
+        <ul>
+            <li><strong>Minh bạch:</strong> Thông báo rõ ràng về dữ liệu thu thập và mục đích sử dụng.</li>
+            <li><strong>Tối thiểu hóa:</strong> Chỉ thu thập dữ liệu cần thiết cho hoạt động dịch vụ.</li>
+            <li><strong>Bảo mật:</strong> Áp dụng biện pháp kỹ thuật và tổ chức phù hợp để bảo vệ dữ liệu.</li>
+            <li><strong>Quyền kiểm soát:</strong> Người dùng có quyền truy cập, chỉnh sửa và xóa dữ liệu.</li>
+        </ul>
+
+        <h3>4.2. Tiêu chuẩn tuân thủ</h3>
+        <p>SeedStep tuân thủ các quy định bảo vệ dữ liệu quan trọng:</p>
+        <ul>
+            <li><strong>GDPR</strong> (General Data Protection Regulation) - Liên minh châu Âu.</li>
+            <li><strong>CCPA</strong> (California Consumer Privacy Act) - California, Mỹ.</li>
+            <li><strong>PDPA</strong> (Personal Data Protection Act) - Thái Lan và các quốc gia ASEAN.</li>
+        </ul>
+
+        <h3>4.3. Mã hóa dữ liệu</h3>
+        <ul>
+            <li>Dữ liệu truyền tải được mã hóa bằng <strong>SSL/TLS 256-bit</strong>.</li>
+            <li>Dữ liệu lưu trữ được mã hóa AES-256 tại database.</li>
+            <li>Backup dữ liệu được mã hóa và lưu trữ tại các trung tâm dữ liệu an toàn.</li>
+        </ul>
+
+        <div class="highlight success">
+            <strong>Cam kết:</strong> SeedStep không bán dữ liệu cá nhân của bạn cho bên thứ ba vì mục đích quảng cáo.
+        </div>
+    </section>
+
+    <!-- ========== 5. THU THẬP & SỬ DỤNG DỮ LIỆU ========== -->
+    <section id="thu-thap-du-lieu">
+        <h2><span class="icon">📊</span>Thu thập & sử dụng dữ liệu</h2>
+
+        <h3>5.1. Dữ liệu bạn cung cấp</h3>
+        <ul>
+            <li><strong>Thông tin đăng ký:</strong> Tên, email, ngày sinh, quốc gia, ảnh đại diện.</li>
+            <li><strong>Thông tin hồ sơ:</strong> Sở thích, hoạt động yêu thích, mục tiêu bảo vệ môi trường.</li>
+            <li><strong>Nội dung tạo ra:</strong> Bài viết, bình luận, hình ảnh, video được đăng tải.</li>
+            <li><strong>Thông tin giao dịch:</strong> Lịch sử mua hàng, thanh toán, nhận thưởng.</li>
+            <li><strong>Liên lạc:</strong> Tin nhắn hỗ trợ, phản hồi khảo sát, khiếu nại.</li>
+        </ul>
+
+        <h3>5.2. Dữ liệu thu thập tự động</h3>
+        <ul>
+            <li><strong>Thông tin thiết bị:</strong> Loại thiết bị, hệ điều hành, phiên bản ứng dụng, ngôn ngữ.</li>
+            <li><strong>Định danh thiết bị:</strong> IDFA, GAID, Device ID duy nhất.</li>
+            <li><strong>Địa chỉ IP:</strong> Xác định vị trí đăng nhập (được ẩn một phần để bảo vệ quyền riêng tư).</li>
+            <li><strong>Dữ liệu sử dụng:</strong> Tính năng sử dụng, thời gian, tần suất, lỗi.</li>
+            <li><strong>Vị trí:</strong> GPS (khi được cho phép) hoặc vị trí dựa trên mạng để hiển thị thời tiết, sự kiện địa phương.</li>
+        </ul>
+
+        <h3>5.3. Cookies và công nghệ tương tự</h3>
+        <p>SeedStep sử dụng cookies và công nghệ tương tự để:</p>
+        <ul>
+            <li>Ghi nhớ đăng nhập và tùy chọn người dùng.</li>
+            <li>Phân tích lưu lượng và cải thiện trải nghiệm.</li>
+            <li>Hiển thị quảng cáo phù hợp (nếu có).</li>
+        </ul>
+
+        <h3>5.4. Mục đích sử dụng dữ liệu</h3>
+        <ol>
+            <li>Cung cấp và vận hành các tính năng của SeedStep.</li>
+            <li>Cá nhân hóa trải nghiệm (gợi ý cây trồng, thử thách phù hợp).</li>
+            <li>Xử lý giao dịch và gửi xác nhận.</li>
+            <li>Gửi thông báo về hoạt động, cập nhật, khuyến mãi (khi được đồng ý).</li>
+            <li>Phát hiện và ngăn chặn gian lận, lạm dụng.</li>
+            <li>Cải thiện sản phẩm thông qua phân tích dữ liệu ẩn danh.</li>
+            <li>Hỗ trợ khách hàng và giải quyết tranh chấp.</li>
+        </ol>
+    </section>
+
+    <!-- ========== 6. QUYỀN NGƯỜI DÙNG ========== -->
+    <section id="quyen-nguoi-dung">
+        <h2><span class="icon">✨</span>Quyền của người dùng</h2>
+
+        <h3>6.1. Quyền truy cập</h3>
+        <p>Bạn có quyền yêu cầu SeedStep cung cấp bản sao dữ liệu cá nhân đang được xử lý, bao gồm:</p>
+        <ul>
+            <li>Thông tin hồ sơ và tài khoản.</li>
+            <li>Lịch sử hoạt động và giao dịch.</li>
+            <li>Dữ liệu vị trí (nếu có).</li>
+        </ul>
+
+        <h3>6.2. Quyền chỉnh sửa</h3>
+        <p>Bạn có thể cập nhật thông tin cá nhân bất kỳ lúc nào trong mục <strong>Hồ sơ > Chỉnh sửa</strong>. Một số thông tin như email có thể cần xác minh bổ sung.</p>
+
+        <h3>6.3. Quyền xóa dữ liệu</h3>
+        <p>Bạn có quyền yêu cầu xóa dữ liệu cá nhân trong các trường hợp:</p>
+        <ul>
+            <li>Dữ liệu không còn cần thiết cho mục đích ban đầu.</li>
+            <li>Bạn rút lại sự đồng ý xử lý dữ liệu.</li>
+            <li>Dữ liệu được xử lý trái phép.</li>
+        </ul>
+
+        <div class="highlight warning">
+            <strong>Lưu ý:</strong> Một số dữ liệu có thể được giữ lại theo yêu cầu pháp lý hoặc mục đích hợp pháp (ví dụ: bảo vệ quyền lợi pháp lý, tuân thủ nghĩa vụ thuế).
+        </div>
+
+        <h3>6.4. Quyền hạn chế xử lý</h3>
+        <p>Bạn có quyền yêu cầu hạn chế xử lý dữ liệu trong một số trường hợp nhất định.</p>
+
+        <h3>6.5. Quyền phản đối</h3>
+        <p>Bạn có quyền phản đối việc xử lý dữ liệu cho mục đích tiếp thị trực tiếp hoặc dựa trên lợi ích hợp pháp.</p>
+
+        <h3>6.6. Quyền di chuyển dữ liệu</h3>
+        <p>Bạn có quyền nhận dữ liệu đã cung cấp ở định dạng có cấu trúc, phổ biến và có thể đọc được bằng máy (JSON, CSV).</p>
+    </section>
+
+    <!-- ========== 7. THANH TOÁN & HOÀN TIỀN ========== -->
+    <section id="thanh-toan">
+        <h2><span class="icon">💳</span>Thanh toán & hoàn tiền</h2>
+
+        <h3>7.1. Phương thức thanh toán</h3>
+        <p>SeedStep hỗ trợ các phương thức thanh toán:</p>
+        <ul>
+            <li>Thẻ tín dụng / ghi nợ (Visa, Mastercard, JCB, UnionPay).</li>
+            <li>Ví điện tử (Apple Pay, Google Pay, GrabPay, LINE Pay).</li>
+            <li>Chuyển khoản ngân hàng trực tiếp.</li>
+            <li>Mã thẻ quà tặng SeedStep.</li>
+        </ul>
+
+        <h3>7.2. Đơn vị tiền tệ</h3>
+        <p>Giá hiển thị bằng <strong>USD</strong> hoặc <strong>VND</strong> tùy theo khu vực. Tỷ giá được cập nhật theo cổng thanh toán tại thời điểm giao dịch.</p>
+
+        <h3>7.3. Chính sách hoàn tiền</h3>
+        
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>Các trường hợp được hoàn tiền</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ul>
+                            <li><strong>Lỗi kỹ thuật:</strong> Giao dịch thành công nhưng dịch vụ không được cung cấp.</li>
+                            <li><strong>Sai phí:</strong> Bị tính sai số tiền hoặc gói dịch vụ không đúng.</li>
+                            <li><strong>Khóa nhầm:</strong> Tài khoản bị khóa do lỗi hệ thống.</li>
+                            <li><strong>Chưa sử dụng:</strong> Yêu cầu trong vòng <strong>48 giờ</strong> và chưa sử dụng quyền lợi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>Các trường hợp không được hoàn tiền</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Đã sử dụng một phần hoặc toàn bộ quyền lợi của gói.</li>
+                            <li>Tài khoản bị khóa do vi phạm điều khoản sử dụng.</li>
+                            <li>Yêu cầu hoàn sau <strong>48 giờ</strong> kể từ thanh toán.</li>
+                            <li>Gói khuyến mãi, bundle đặc biệt (trừ lỗi hệ thống).</li>
+                            <li>Vật phẩm ảo đã sử dụng hoặc giao dịch.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>Quy trình hoàn tiền</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Gửi yêu cầu qua email hoặc mục Hỗ trợ trong ứng dụng.</li>
+                            <li>Cung cấp mã giao dịch, lý do, ảnh chụp màn hình (nếu có).</li>
+                            <li>SeedStep xét duyệt trong <strong>3-5 ngày làm việc</strong>.</li>
+                            <li>Tiền hoàn về phương thức ban đầu trong <strong>7-14 ngày</strong>.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>7.4. Tự động gia hạn</h3>
+        <p>Gói Premium tự động gia hạn trừ khi bạn hủy <strong>24 giờ</strong> trước khi kết thúc chu kỳ. Bạn có thể hủy bất kỳ lúc nào trong <strong>Cài đặt > Đăng ký</strong>.</p>
+    </section>
+
+    <!-- ========== 8. HÀNH VI BỊ CẤM ========== -->
+    <section id="hanh-vi-cam">
+        <h2><span class="icon">⚠️</span>Hành vi bị cấm</h2>
+        <p>Người dùng SeedStep <strong>không được</strong> thực hiện các hành vi sau:</p>
+
+        <h3>8.1. Nội dung vi phạm</h3>
+        <ul>
+            <li>Đăng tải nội dung khiêu dâm, bạo lực, phân biệt chủng tộc, tôn giáo.</li>
+            <li>Xúc phạm, quấy rối, đe dọa người khác.</li>
+            <li>Phát tán thông tin sai lệch về môi trường, gây hoang mang dư luận.</li>
+            <li>Nội dung vi phạm sở hữu trí tuệ, bản quyền.</li>
+        </ul>
+
+        <h3>8.2. Gian lận và lạm dụng</h3>
+        <ul>
+            <li>Sử dụng tool, bot, script để can thiệp vào hệ thống.</li>
+            <li>Tạo nhiều tài khoản để trục lợi điểm thưởng, khuyến mãi.</li>
+            <li>Gian lận trong các thử thách, sự kiện.</li>
+            <li>Lợi dụng lỗ hổng bảo mật (bug bounty có thể được áp dụng).</li>
+        </ul>
+
+        <h3>8.3. Thương mại bất hợp pháp</h3>
+        <ul>
+            <li>Bán tài khoản, vật phẩm ảo ngoài hệ thống chính thức.</li>
+            <li>Quảng cáo, spam liên kết bên ngoài.</li>
+            <li>Yêu cầu thanh toán bên ngoài ứng dụng.</li>
+        </ul>
+
+        <h3>8.4. Xâm nhập hệ thống</h3>
+        <ul>
+            <li>Cố gắng truy cập trái phép vào tài khoản người khác.</li>
+            <li>Tấn công DDoS, SQL injection, malware.</li>
+            <li>Đảo ngược engineer, decompile mã nguồn ứng dụng.</li>
+        </ul>
+
+        <div class="highlight danger">
+            <strong>Cảnh báo nghiêm trọng:</strong> Vi phạm nghiêm trọng có thể dẫn đến khóa tài khoản vĩnh viễn, mất toàn bộ quyền lợi và chuyển hồ sơ đến cơ quan chức năng nếu cần thiết.
+        </div>
+    </section>
+
+    <!-- ========== 9. NỘI DUNG & CỘNG ĐỒNG ========== -->
+    <section id="noi-dung-sinh-thai">
+        <h2><span class="icon">🌍</span>Nội dung & cộng đồng</h2>
+
+        <h3>9.1. Sở hữu nội dung</h3>
+        <p>Bạn giữ quyền sở hữu đối với nội dung do bạn tạo ra. Khi đăng tải nội dung, bạn cấp cho SeedStep:</p>
+        <ul>
+            <li>Quyền sử dụng, sao chép, chỉnh sửa, phân phối nội dung đó.</li>
+            <li>Quyền hiển thị nội dung trong ứng dụng và trên các nền tảng liên kết.</li>
+            <li>Quyền sử dụng cho mục đích quảng bá (với sự đồng ý của bạn).</li>
+        </ul>
+
+        <h3>9.2. Quy tắc cộng đồng</h3>
+        <p>SeedStep xây dựng cộng đồng dựa trên:</p>
+        <ul>
+            <li><strong>Tôn trọng:</strong> Đối xử với mọi người với sự tôn trọng và lịch sự.</li>
+            <li><strong>Baøiõ:</strong> Chia sẻ kiến thức, kinh nghiệm về bảo vệ môi trường.</li>
+            <li><strong>Hợp tác:</strong> Hỗ trợ nhau cùng phát triển.</li>
+            <li><strong>Chân thành:</strong> Chia sẻ thông tin chính xác, có nguồn gốc rõ ràng.</li>
+        </ul>
+
+        <h3>9.3. Báo cáo vi phạm</h3>
+        <p>Nếu phát hiện nội dung vi phạm, vui lòng báo cáo qua email: <strong>phongdevinfo@gmail.com</strong></p>
+
+        <h3>9.4. Gỡ bỏ nội dung</h3>
+        <p>SeedStep có quyền gỡ bỏ nội dung vi phạm mà không cần thông báo trước, đồng thời thông báo cho người dùng về quyết định này.</p>
+    </section>
+
+    <!-- ========== 10. GIỚI HẠN TRÁCH NHIỆM ========== -->
+    <section id="gioi-han-trach-nhiem">
+        <h2><span class="icon">📋</span>Giới hạn trách nhiệm</h2>
+
+        <h3>10.1. Dịch vụ "nguyên trạng"</h3>
+        <p>SeedStep cung cấp dịch vụ "nguyên trạng" (as is) và "có sẵn" (as available). Chúng tôi không đảm bảo rằng dịch vụ sẽ không bị gián đoạn, an toàn hoặc không có lỗi.</p>
+
+        <h3>10.2. Loại trừ trách nhiệm</h3>
+        <p>Trong phạm vi tối đa được pháp luật cho phép, SeedStep không chịu trách nhiệm về:</p>
+        <ul>
+            <li>Thiệt hại gián tiếp, ngẫu nhiên, đặc biệt hoặc do hậu quả.</li>
+            <li>Mất dữ liệu, mất lợi nhuận, mất cơ hội kinh doanh.</li>
+            <li>Thiệt hại do sử dụng hoặc không thể sử dụng dịch vụ.</li>
+            <li>Hành vi của bên thứ ba, bao gồm các liên kết đến trang web khác.</li>
+        </ul>
+
+        <h3>10.3. Giới hạn bồi thường</h3>
+        <p>Tổng trách nhiệm của SeedStep đối với bạn không vượt quá số tiền bạn đã thanh toán cho chúng tôi trong 12 tháng trước sự kiện phát sinh khiếu nại.</p>
+
+        <h3>10.4. Bảo vệ quyền sở hữu</h3>
+        <p>Bạn đồng ý bảo vệ, bồi thường và giữ cho SeedStep, ban lãnh đạo, nhân viên, đối tác không bị tổn hại từ mọi khiếu nại, yêu cầu, tổn thất phát sinh từ việc bạn vi phạm điều khoản này.</p>
+
+        <div class="highlight">
+            <strong>Miễn trừ trách nhiệm về môi trường:</strong> SeedStep không đại diện hay bảo đảm rằng việc tham gia các hoạt động trong ứng dụng sẽ tạo ra tác động môi trường thực tế cụ thể. Mọi cam kết trồng cây thực tế được thực hiện thông qua các đối tác đã được xác minh.
+        </div>
+    </section>
+
+    <!-- ========== 11. SỬA ĐỔI ĐIỀU KHOẢN ========== -->
+    <section id="sua-doi">
+        <h2><span class="icon">📝</span>Sửa đổi điều khoản</h2>
+
+        <h3>11.1. Quyền sửa đổi</h3>
+        <p>SeedStep có quyền sửa đổi, bổ sung hoặc cập nhật các điều khoản này bất kỳ lúc nào theo các hình thức:</p>
+        <ul>
+            <li><strong>Cập nhật nhỏ:</strong> Điều chỉnh cách diễn đạt, thêm giải thích (có hiệu lực ngay).</li>
+            <li><strong>Sửa đổi quan trọng:</strong> Thay đổi quyền, nghĩa vụ của người dùng (thông báo trước 30 ngày).</li>
+            <li><strong>Thay đổi bắt buộc:</strong> Do yêu cầu pháp lý, an ninh (có hiệu lực ngay).</li>
+        </ul>
+
+        <h3>11.2. Thông báo thay đổi</h3>
+        <p>Khi có thay đổi quan trọng, SeedStep sẽ:</p>
+        <ul>
+            <li>Gửi thông báo qua email đăng ký.</li>
+            <li>Hiển thị thông báo trong ứng dụng khi đăng nhập.</li>
+            <li>Cập nhật "Cập nhật lần cuối" trên trang này.</li>
+        </ul>
+
+        <h3>11.3. Tiếp tục sử dụng</h3>
+        <p>Nếu bạn tiếp tục sử dụng SeedStep sau khi các thay đổi có hiệu lực, điều đó có nghĩa là bạn chấp nhận các điều khoản đã được sửa đổi. Nếu bạn không đồng ý, bạn có thể:</p>
+        <ul>
+            <li>Ngừng sử dụng dịch vụ.</li>
+            <li>Yêu cầu xóa tài khoản và dữ liệu theo quy trình trong mục Hỗ trợ.</li>
+        </ul>
+    </section>
+
+    <!-- ========== 12. LIÊN HỆ HỖ TRỢ ========== -->
+    <section id="lien-he">
+        <h2><span class="icon">📧</span>Liên hệ hỗ trợ</h2>
+        <p>Nếu bạn có câu hỏi, thắc mắc hoặc khiếu nại về Điều khoản & Chính sách, vui lòng liên hệ:</p>
+
+        <div class="contact-card">
+            <div class="row">
+                <span class="label">Email:</span>
+                <span>phongdevinfo@gmail.com</span>
+            </div>
+        </div>
+
+        <h3>Thời gian phản hồi</h3>
+        <ul>
+            <li><strong>Hỗ trợ chung:</strong> Trong vòng <strong>24 giờ</strong> làm việc.</li>
+            <li><strong>Câu hỏi về dữ liệu (GDPR):</strong> Trong vòng <strong>30 ngày</strong>.</li>
+            <li><strong>Vấn đề khẩn cấp:</strong> Ưu tiên xử lý trong <strong>4 giờ</strong>.</li>
+        </ul>
+
+        <h3>Cơ quan giám sát</h3>
+        <p>Nếu không hài lòng với cách chúng tôi xử lý khiếu nại, bạn có quyền liên hệ cơ quan bảo vệ dữ liệu tại quốc gia của bạn.</p>
+
+        <div class="highlight success">
+            Cảm ơn bạn đã đồng hành cùng <strong>SeedStep</strong> 🌱. Chúng tôi cam kết xây dựng một nền tảng an toàn, lành mạnh và có ý nghĩa cho cộng đồng yêu thiên nhiên trên toàn thế giới.
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="brand">🌱 SeedStep</div>
+        <div>&copy; 2024 - 2026 SeedStep. All rights reserved.</div>
+        <div style="margin-top:8px; opacity:0.7;">Phiên bản tài liệu: 2.0.0</div>
+        <div style="margin-top:4px; opacity:0.5;">Mầm xanh giữa các vì sao</div>
+    </footer>
+
+</div>
+
+<script>
+    // Smooth scroll cho anchor links trong TOC
+    document.querySelectorAll('.toc a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(function(header) {
+        header.addEventListener('click', function() {
+            var item = this.closest('.accordion-item');
+            var isActive = item.classList.contains('active');
+            
+            // Close all accordion items
+            document.querySelectorAll('.accordion-item').forEach(function(i) {
+                i.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't already open
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
