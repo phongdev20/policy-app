@@ -9,7 +9,8 @@
   <meta property="og:site_name" content="Zentio" />
   <meta property="og:title" content="Xem trên ứng dụng Zentio" />
   <meta property="og:description" content="Chạm để mở chi tiết trong ứng dụng Zentio. Cộng đồng kết nối makeup artist tại Việt Nam." />
-  <meta property="og:url" content="https://policy-app-1qz.pages.dev/share-zentio" />
+  <meta property="og:url" content="https://policy-app-1qz.pages.dev/share-zentio.html" />
+  <meta name="apple-itunes-app" content="app-id=6786631974" />
   <meta name="theme-color" content="#FFF9F8" />
   <style>
     :root {
@@ -175,10 +176,10 @@
     (function () {
       var APP_SCHEME = "zentio";
       var ANDROID_PACKAGE = "com.zentech.zentio.app";
-      var WEB_BASE = "https://policy-app-1qz.pages.dev/share-zentio";
       var PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.zentech.zentio.app&hl=vi";
       var APP_STORE_URL = "https://apps.apple.com/vn/app/zentio/id6786631974?l=vi";
       var SAFE_SEGMENT = /^[A-Za-z0-9_-]+$/;
+      var AUTO_OPEN_DELAY_MS = 500;
       var FALLBACK_DELAY_MS = 2500;
 
       var titleEl = document.getElementById("title");
@@ -191,6 +192,14 @@
       var errorCard = document.getElementById("errorCard");
       var inAppHint = document.getElementById("inAppHint");
 
+      var appOpened = false;
+      function markOpened() { appOpened = true; }
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) markOpened();
+      });
+      window.addEventListener("pagehide", markOpened);
+      window.addEventListener("blur", markOpened);
+
       function isAndroid() { return /Android/i.test(navigator.userAgent); }
       function isIOS() { return /iPhone|iPad|iPod/i.test(navigator.userAgent); }
       function isInAppBrowser() {
@@ -202,30 +211,62 @@
         return { url: PLAY_STORE_URL, label: "Tải trên Google Play" };
       }
 
+      function normalizeSeg(s) {
+        var v = s || "";
+        if (v.toLowerCase().endsWith(".html")) return v.slice(0, -".html".length);
+        return v;
+      }
+
+      function isKind(s) {
+        var v = (s || "").toLowerCase();
+        return v === "expert" || v === "album";
+      }
+
+      function cleanId(s) {
+        return (s || "").split("?")[0].split("#")[0].trim();
+      }
+
       function readTarget() {
+        var params = null;
+        try {
+          params = new URLSearchParams(window.location.search || "");
+        } catch (e) {
+          params = null;
+        }
+        var qKind = params ? (params.get("kind") || "") : "";
+        var qId = params ? (params.get("id") || "") : "";
+        if (isKind(qKind) && SAFE_SEGMENT.test(cleanId(qId))) {
+          return { kind: qKind.toLowerCase(), id: cleanId(qId) };
+        }
         var path = window.location.pathname || "";
-        var parts = path.split("/").filter(Boolean);
+        var rawParts = path.split("/").filter(Boolean);
+        var parts = [];
+        for (var i = 0; i < rawParts.length; i++) {
+          try {
+            parts.push(normalizeSeg(decodeURIComponent(rawParts[i])));
+          } catch (e) {
+            parts.push(normalizeSeg(rawParts[i]));
+          }
+        }
         var shareIdx = -1;
-        for (var i = 0; i < parts.length; i++) {
-          if (parts[i] === "share-zentio" || parts[i] === "share") {
-            shareIdx = i;
+        for (var j = 0; j < parts.length; j++) {
+          var p = (parts[j] || "").toLowerCase();
+          if (p === "share-zentio") {
+            shareIdx = j;
             break;
           }
         }
-        var segs = shareIdx >= 0 ? parts.slice(shareIdx + 1) : parts;
-        var kind = segs[0];
-        var id = segs[1];
-        var params = new URLSearchParams(window.location.search || "");
-        if (!kind) kind = params.get("kind") || "";
-        if (!id) id = params.get("id") || "";
-        if ((!kind || !id) && window.location.hash) {
-          var hashSegs = window.location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
-          if (!kind) kind = hashSegs[0] || "";
-          if (!id) id = hashSegs[1] || "";
+        if (shareIdx >= 0) {
+          var kind = (parts[shareIdx + 1] || "").toLowerCase();
+          var id = cleanId(parts[shareIdx + 2] || "");
+          if (isKind(kind) && SAFE_SEGMENT.test(id)) return { kind: kind, id: id };
         }
-        kind = (kind || "").toLowerCase();
-        id = (id || "").split("?")[0].split("#")[0];
-        if ((kind === "expert" || kind === "album") && SAFE_SEGMENT.test(id)) return { kind: kind, id: id };
+        if (window.location.hash) {
+          var hashSegs = window.location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
+          var h0 = normalizeSeg(hashSegs[0] || "").toLowerCase();
+          var h1 = cleanId(hashSegs[1] || "");
+          if (isKind(h0) && SAFE_SEGMENT.test(h1)) return { kind: h0, id: h1 };
+        }
         return null;
       }
 
@@ -237,16 +278,10 @@
           ";S.browser_fallback_url=" + encodeURIComponent(PLAY_STORE_URL) + ";end";
       }
 
-      function openApp(t, viaUserGesture) {
+      function openApp(t) {
+        if (!t || appOpened) return;
         if (isAndroid() && !isInAppBrowser()) {
-          if (viaUserGesture) window.location.href = intentUrl(t);
-          else {
-            var iframe = document.createElement("iframe");
-            iframe.style.display = "none";
-            iframe.src = schemeUrl(t);
-            document.body.appendChild(iframe);
-            setTimeout(function () { window.location.href = intentUrl(t); }, 600);
-          }
+          window.location.href = intentUrl(t);
         } else {
           window.location.href = schemeUrl(t);
         }
@@ -286,11 +321,13 @@
 
       openBtn.addEventListener("click", function (e) {
         e.preventDefault();
-        openApp(target, true);
+        markOpened();
+        openApp(target);
       });
 
-      setTimeout(function () { openApp(target, false); }, 400);
+      setTimeout(function () { openApp(target); }, AUTO_OPEN_DELAY_MS);
       setTimeout(function () {
+        if (appOpened) return;
         spinnerEl.style.display = "none";
         titleEl.textContent = "Chưa mở được app Zentio?";
         subtitleEl.textContent = "Nếu bạn đã cài app, chạm nút Mở trong Zentio. Nếu chưa, tải app để xem đầy đủ chi tiết.";

@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "3U3D2XYU47.com.zentech.zentio.app",
+        "paths": ["/share-zentio.html", "/share-zentio/*"]
+      }
+    ]
+  }
+}

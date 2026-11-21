@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.zentech.zentio.app",
+      "sha256_cert_fingerprints": ["C9:B0:C4:2B:6C:DC:28:A7:2C:CE:E3:AE:B4:49:82:E4:B0:6B:F6:B3:1C:4A:ED:C5:8B:BF:5D:65:BC:C7:30:31"]
+    }
+  }
+]
