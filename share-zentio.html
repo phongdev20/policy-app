@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Mở trong ứng dụng Zentio</title>
+  <meta name="description" content="Mở nội dung chia sẻ từ Zentio trong ứng dụng. Nếu chưa cài app, tải Zentio để xem chi tiết chuyên gia và album makeup." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zentio" />
+  <meta property="og:title" content="Xem trên ứng dụng Zentio" />
+  <meta property="og:description" content="Chạm để mở chi tiết trong ứng dụng Zentio. Cộng đồng kết nối makeup artist tại Việt Nam." />
+  <meta property="og:url" content="https://policy-app-1qz.pages.dev/share-zentio" />
+  <meta name="theme-color" content="#FFF9F8" />
+  <style>
+    :root {
+      --cta: #B04F62;
+      --cta-dark: #93414f;
+      --cta-mid: #B65669;
+      --rose: #E99AA7;
+      --blush: #FCE8EA;
+      --ivory: #FFF9F8;
+      --surface: #FFFFFF;
+      --charcoal: #292426;
+      --warm-gray: #776C6F;
+      --border: #EDE1E2;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Be Vietnam Pro", "Segoe UI", sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 440px;
+      padding: 48px 24px calc(32px + env(safe-area-inset-bottom));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      flex: 1;
+    }
+    .logo {
+      width: 76px;
+      height: 76px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--cta) 0%, var(--cta-mid) 55%, var(--rose) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+      box-shadow: 0 12px 32px rgba(176, 79, 98, 0.28);
+    }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cta);
+      margin-bottom: 10px;
+    }
+    h1 { font-size: 22px; line-height: 1.35; margin-bottom: 8px; }
+    .sub { font-size: 15px; line-height: 1.6; color: var(--warm-gray); margin-bottom: 24px; }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid var(--blush);
+      border-top-color: var(--cta);
+      animation: spin 0.9s linear infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .spinner { animation: none; }
+    }
+    .card {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 24px rgba(41, 36, 38, 0.06);
+    }
+    .target {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--cta);
+      background: var(--blush);
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 10px;
+    }
+    .kind-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--warm-gray);
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 52px;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 12px;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary { background: var(--cta); color: #fff; }
+    .btn-primary:active { background: var(--cta-dark); }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--charcoal);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:active { background: var(--blush); }
+    .hint {
+      display: none;
+      width: 100%;
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--blush);
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: left;
+    }
+    .hint.show { display: block; }
+    .error { display: none; width: 100%; }
+    .error.show { display: block; }
+    .footer { font-size: 12px; color: var(--warm-gray); margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="logo" aria-hidden="true">Z</div>
+    <p class="eyebrow">Zentio</p>
+    <h1 id="title">Đang mở trong ứng dụng Zentio…</h1>
+    <p class="sub" id="subtitle">Vui lòng chờ giây lát, bạn sẽ được đưa tới đúng nội dung được chia sẻ.</p>
+    <div class="spinner" id="spinner" role="status" aria-label="Đang mở ứng dụng"></div>
+
+    <section class="card" id="targetCard">
+      <span class="target" id="targetLabel">Liên kết chia sẻ</span>
+      <p class="kind-desc" id="kindDesc">Nội dung được chia sẻ từ cộng đồng Zentio.</p>
+    </section>
+
+    <section class="card error" id="errorCard">
+      <p class="sub" style="margin-bottom:0">Liên kết không hợp lệ hoặc đã hết hạn. Vui lòng kiểm tra lại đường link được chia sẻ.</p>
+    </section>
+
+    <a class="btn btn-primary" id="openBtn" href="#" aria-label="Mở trong ứng dụng Zentio">Mở trong Zentio</a>
+    <a class="btn btn-secondary" id="storeBtn" href="#" aria-label="Tải ứng dụng Zentio">Tải ứng dụng Zentio</a>
+
+    <p class="hint" id="inAppHint">Bạn đang mở bằng trình duyệt trong Zalo / Facebook / Messenger nên nút mở app có thể bị chặn. Hãy chạm dấu <strong>…</strong> góc màn hình rồi chọn <strong>Mở trong trình duyệt</strong> (Safari / Chrome), sau đó mở lại liên kết.</p>
+    <p class="footer">Cộng đồng kết nối makeup artist tại Việt Nam</p>
+  </main>
+
+  <script>
+    (function () {
+      var APP_SCHEME = "zentio";
+      var ANDROID_PACKAGE = "com.zentech.zentio.app";
+      var WEB_BASE = "https://policy-app-1qz.pages.dev/share-zentio";
+      var PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.zentech.zentio.app&hl=vi";
+      var APP_STORE_URL = "https://apps.apple.com/vn/app/zentio/id6786631974?l=vi";
+      var SAFE_SEGMENT = /^[A-Za-z0-9_-]+$/;
+      var FALLBACK_DELAY_MS = 2500;
+
+      var titleEl = document.getElementById("title");
+      var subtitleEl = document.getElementById("subtitle");
+      var spinnerEl = document.getElementById("spinner");
+      var targetLabelEl = document.getElementById("targetLabel");
+      var kindDescEl = document.getElementById("kindDesc");
+      var openBtn = document.getElementById("openBtn");
+      var storeBtn = document.getElementById("storeBtn");
+      var errorCard = document.getElementById("errorCard");
+      var inAppHint = document.getElementById("inAppHint");
+
+      function isAndroid() { return /Android/i.test(navigator.userAgent); }
+      function isIOS() { return /iPhone|iPad|iPod/i.test(navigator.userAgent); }
+      function isInAppBrowser() {
+        var ua = navigator.userAgent || "";
+        return /Zalo|FBAN|FBAV|FB_IAB|FBAV|Instagram|Line|Micromessenger|TikTok|Musical_ly/i.test(ua);
+      }
+      function storeInfo() {
+        if (isIOS()) return { url: APP_STORE_URL, label: "Tải trên App Store" };
+        return { url: PLAY_STORE_URL, label: "Tải trên Google Play" };
+      }
+
+      function readTarget() {
+        var path = window.location.pathname || "";
+        var parts = path.split("/").filter(Boolean);
+        var shareIdx = -1;
+        for (var i = 0; i < parts.length; i++) {
+          if (parts[i] === "share-zentio" || parts[i] === "share") {
+            shareIdx = i;
+            break;
+          }
+        }
+        var segs = shareIdx >= 0 ? parts.slice(shareIdx + 1) : parts;
+        var kind = segs[0];
+        var id = segs[1];
+        var params = new URLSearchParams(window.location.search || "");
+        if (!kind) kind = params.get("kind") || "";
+        if (!id) id = params.get("id") || "";
+        if ((!kind || !id) && window.location.hash) {
+          var hashSegs = window.location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
+          if (!kind) kind = hashSegs[0] || "";
+          if (!id) id = hashSegs[1] || "";
+        }
+        kind = (kind || "").toLowerCase();
+        id = (id || "").split("?")[0].split("#")[0];
+        if ((kind === "expert" || kind === "album") && SAFE_SEGMENT.test(id)) return { kind: kind, id: id };
+        return null;
+      }
+
+      function schemeUrl(t) { return APP_SCHEME + "://" + t.kind + "/" + t.id; }
+      function intentUrl(t) {
+        return "intent://" + t.kind + "/" + t.id +
+          "#Intent;scheme=" + APP_SCHEME +
+          ";package=" + ANDROID_PACKAGE +
+          ";S.browser_fallback_url=" + encodeURIComponent(PLAY_STORE_URL) + ";end";
+      }
+
+      function openApp(t, viaUserGesture) {
+        if (isAndroid() && !isInAppBrowser()) {
+          if (viaUserGesture) window.location.href = intentUrl(t);
+          else {
+            var iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = schemeUrl(t);
+            document.body.appendChild(iframe);
+            setTimeout(function () { window.location.href = intentUrl(t); }, 600);
+          }
+        } else {
+          window.location.href = schemeUrl(t);
+        }
+      }
+
+      var store = storeInfo();
+      storeBtn.href = store.url;
+      storeBtn.textContent = store.label;
+      storeBtn.setAttribute("aria-label", store.label + " - Zentio");
+
+      var target = readTarget();
+
+      if (!target) {
+        titleEl.textContent = "Không mở được liên kết";
+        subtitleEl.textContent = "Liên kết thiếu chuyên gia hoặc album cần mở.";
+        spinnerEl.style.display = "none";
+        errorCard.classList.add("show");
+        openBtn.style.display = "none";
+        storeBtn.style.display = "none";
+        document.title = "Liên kết không hợp lệ | Zentio";
+        return;
+      }
+
+      var label = target.kind === "expert" ? "Chuyên gia" : "Album";
+      targetLabelEl.textContent = label;
+      kindDescEl.textContent = target.kind === "expert"
+        ? "Mở hồ sơ chuyên gia trong ứng dụng Zentio."
+        : "Mở album makeup trong ứng dụng Zentio.";
+      openBtn.href = schemeUrl(target);
+      document.title = label + " trên Zentio";
+      try {
+        var ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute("content", label + " trên ứng dụng Zentio");
+      } catch (e) {}
+
+      if (isInAppBrowser()) inAppHint.classList.add("show");
+
+      openBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        openApp(target, true);
+      });
+
+      setTimeout(function () { openApp(target, false); }, 400);
+      setTimeout(function () {
+        spinnerEl.style.display = "none";
+        titleEl.textContent = "Chưa mở được app Zentio?";
+        subtitleEl.textContent = "Nếu bạn đã cài app, chạm nút Mở trong Zentio. Nếu chưa, tải app để xem đầy đủ chi tiết.";
+      }, FALLBACK_DELAY_MS);
+    })();
+  </script>
+</body>
+</html>
